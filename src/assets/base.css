@@ -1,52 +1,68 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
-
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
-
-  --vt-c-indigo: #2c3e50;
-
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
-
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+  --dark: #fbf1c7;
+  --dark-1: #ebdbb2;
+  --dark-2: #d5c4a1;
+  --dark-3: #bdae93;
+  --dark-4: #f2e5bc;
+  --dark-5: #a89984;
+  --light: #3c3836;
+  --light-1: #282828;
+  --light-2: #504945;
+  --light-3: #665c54;
+  --light-4: #7c6f64;
+  --red: #cc241d;
+  --red-1: #9d0006;
+  --red-2: #fb4934;
+  --green: #98971a;
+  --green-1: #b8bb26;
+  --green-2: #79740e;
+  --yellow: #d79921;
+  --yellow-1: #fabd2f;
+  --yellow-2: #b57614;
+  --blue: #458588;
+  --blue-1: #076678;
+  --blue-2: #83a598;
+  --purple: #b16286;
+  --purple-1: #d3869b;
+  --purple-2: #8f3f71;
+  --aqua: #689d6a;
+  --aqua-1: #427b58;
+  --aqua-2: #8ec07c;
+  --gray: #a89984;
+  --gray-1: #928374;
+  --gray-2: #7c6f64;
+  --orange: #d65d0e;
+  --orange-1: #fe8019;
+  --orange-2: #af3a03;
 }
 
 /* semantic color variables for this project */
 :root {
-  --color-background: var(--vt-c-white);
+  --color-background: var(--light);
   --color-background-soft: var(--vt-c-white-soft);
   --color-background-mute: var(--vt-c-white-mute);
 
   --color-border: var(--vt-c-divider-light-2);
   --color-border-hover: var(--vt-c-divider-light-1);
 
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
+  --color-heading: var(--dark-1);
+  --color-text: var(--dark-1);
 
   --section-gap: 160px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: var(--vt-c-black);
+    --color-background: var(--dark);
     --color-background-soft: var(--vt-c-black-soft);
     --color-background-mute: var(--vt-c-black-mute);
 
     --color-border: var(--vt-c-divider-dark-2);
     --color-border-hover: var(--vt-c-divider-dark-1);
 
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
+    --color-heading: var(--light-1);
+    --color-text: var(--light-2);
   }
 }
 
