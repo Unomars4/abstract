@@ -3,18 +3,19 @@
 </script>
 <template>
   <main>
-    <div class="canvas-container">
-      <canvas id="canvas" width="500px" height="500px" />
-    </div>
+    <canvas id="canvas" width="500px" height="500px" />
   </main>
 </template>
 <style lang="css">
-.canvas-container {
-  margin: auto;
-  border: solid 1px var(--red-1);
+main {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 #canvas {
-  border: solid 2px var(--dark-1);
+  border: solid 4px black;
+  margin: auto;
 }
 </style>
