@@ -2,23 +2,26 @@
 import p5 from "p5";
 import { onMounted, useTemplateRef } from "vue";
 
-const main = useTemplateRef<HTMLElement | undefined>("main");
+const container = useTemplateRef<HTMLDivElement | undefined>("container");
 
 let sketch = function (p: p5) {
+  let circle_x = 5;
+  const screen_width = 500, screen_height = 410;
   p.setup = function () {
-    p.createCanvas(500, 410);
+    p.createCanvas(screen_width, screen_height);
   }
 
   p.draw = function () {
-    p.background(170, 0, 0);
-    p.fill(255);
-    p.rect(100, 100, 50, 50);
+    if (circle_x > screen_width) circle_x = 5;
+    p.background(255);
+    p.fill(125);
+    p.circle(circle_x++, 100, 50);
   }
 }
 
 onMounted(() => {
-  if (main.value)
-    new p5(sketch, main.value)
+  if (container.value)
+    new p5(sketch, container.value)
 })
 </script>
 
@@ -27,6 +30,7 @@ onMounted(() => {
 <template>
   <main ref="main">
     <h1>Lab</h1>
+    <div id="container" ref="container"></div>
   </main>
 </template>
 
@@ -47,8 +51,9 @@ main {
   align-content: center;
 }
 
-.p5Canvas {
-  border: solid 4px black;
-  margin: auto;
+#container {
+  border: solid 6px black;
+  height: fit-content;
+  width: fit-content;
 }
 </style>
