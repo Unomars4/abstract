@@ -28,10 +28,8 @@ onMounted(() => {
 
 
 <template>
-  <main ref="main">
-    <h1>Lab</h1>
-    <div id="container" ref="container"></div>
-  </main>
+  <h1>Lab</h1>
+  <div id="container" ref="container"></div>
 </template>
 
 

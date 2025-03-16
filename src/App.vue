@@ -9,13 +9,13 @@ import { RouterView } from 'vue-router'
     </nav>
   </header>
 
-  <div>
+  <main>
     <aside>
       <h1>SideNav</h1>
     </aside>
 
     <RouterView />
-  </div>
+  </main>
 
   <footer>
   </footer>
