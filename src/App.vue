@@ -4,11 +4,9 @@ import { RouterView } from 'vue-router'
 
 <template>
   <header>
-    <div class="wrapper">
-      <h1>Abstract</h1>
-      <nav>
-      </nav>
-    </div>
+    <h1>Abstract</h1>
+    <nav>
+    </nav>
   </header>
 
   <RouterView />
@@ -27,5 +25,10 @@ footer {
   height: 30px;
   background: lightgrey;
   border-top: darkgrey solid 1px;
+}
+
+header {
+  width: 100%;
+  border-bottom: solid darkgrey 1px;
 }
 </style>
