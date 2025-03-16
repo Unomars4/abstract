@@ -30,7 +30,6 @@ onMounted(() => {
 
 <template>
   <div class="main">
-    <h1>Lab</h1>
     <div id="container" ref="container"></div>
   </div>
 </template>
