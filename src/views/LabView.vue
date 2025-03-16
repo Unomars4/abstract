@@ -9,14 +9,14 @@ let sketch = function (p: p5) {
   let walker: Walker;
   const screen_width = 640, screen_height = 240;
   p.setup = function () {
-    walker = new Walker(p)
     p.createCanvas(screen_width, screen_height);
+    walker = new Walker(p)
     p.background(255)
   }
 
   p.draw = function () {
-    walker.show()
     walker.step()
+    walker.show()
   }
 }
 

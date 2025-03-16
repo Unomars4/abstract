@@ -13,23 +13,21 @@ export default class Walker {
   }
 
   public show() {
-    const { x, y, sketch } = this
-    sketch.stroke(125)
-    sketch.point(x, y)
+    this.sketch.stroke(0)
+    this.sketch.point(this.x, this.y)
   }
 
   public step() {
-    let { sketch, x, y } = this
-    const choice = sketch.floor(sketch.random(4))
+    const choice = this.sketch.floor(this.sketch.random(4))
 
     if (choice === 0) {
-      x++
+      this.x++
     } else if (choice === 1) {
-      x--
+      this.x--
     } else if (choice === 2) {
-      y++
+      this.y++
     } else {
-      y--
+      this.y--
     }
   }
 }
