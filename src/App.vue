@@ -4,7 +4,9 @@ import { RouterView } from 'vue-router'
 
 <template>
   <header>
-    <h1>Abstract</h1>
+    <a href="/">
+      <h1>Abstract</h1>
+    </a>
     <nav>
     </nav>
   </header>
