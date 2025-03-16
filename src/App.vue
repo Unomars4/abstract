@@ -9,7 +9,13 @@ import { RouterView } from 'vue-router'
     </nav>
   </header>
 
-  <RouterView />
+  <div>
+    <aside>
+      <h1>SideNav</h1>
+    </aside>
+
+    <RouterView />
+  </div>
 
   <footer>
   </footer>
@@ -19,6 +25,8 @@ import { RouterView } from 'vue-router'
 h1 {
   font-weight: 900;
 }
+
+aside {}
 
 footer {
   width: 100%;
