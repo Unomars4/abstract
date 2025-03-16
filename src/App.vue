@@ -16,20 +16,31 @@ import { RouterView } from 'vue-router'
       <h1>SideNav</h1>
     </aside>
 
-    <RouterView />
+    <div class="wrapper">
+      <RouterView />
+    </div>
   </main>
 
-  <footer>
-  </footer>
 </template>
 
 <style scoped>
+aside,
+header {
+  position: fixed;
+}
+
 h1 {
   font-weight: 900;
 }
 
+.wrapper {
+  flex-grow: 1;
+}
+
 aside {
+  z-index: 1;
   width: 20%;
+  height: 100%;
   border-right: solid 1px darkgrey;
 }
 
@@ -40,19 +51,14 @@ aside h1 {
 }
 
 main {
-  height: 90vh;
+  height: 100%;
   width: 100vw;
   display: flex;
 }
 
-footer {
-  width: 100%;
-  height: 5vh;
-  background: lightgrey;
-  border-top: darkgrey solid 1px;
-}
 
 header {
+  z-index: 2;
   height: 5vh;
   width: 100%;
   border-bottom: solid darkgrey 1px;
