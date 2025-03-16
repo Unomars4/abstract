@@ -1,1 +1,3 @@
 //Walker Class
+
+class Walker {}

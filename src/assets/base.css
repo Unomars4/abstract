@@ -74,6 +74,14 @@
   font-weight: normal;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--light-2);
+}
+
 body {
   min-height: 100vh;
   color: var(--color-text);
