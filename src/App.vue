@@ -26,7 +26,22 @@ h1 {
   font-weight: 900;
 }
 
-aside {}
+aside {
+  width: 20%;
+  border-right: solid 1px darkgrey;
+}
+
+aside h1 {
+  text-align: center;
+  position: relative;
+  top: 50%;
+}
+
+main {
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+}
 
 footer {
   width: 100%;

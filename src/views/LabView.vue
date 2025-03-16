@@ -28,8 +28,10 @@ onMounted(() => {
 
 
 <template>
-  <h1>Lab</h1>
-  <div id="container" ref="container"></div>
+  <div class="main">
+    <h1>Lab</h1>
+    <div id="container" ref="container"></div>
+  </div>
 </template>
 
 
@@ -39,14 +41,14 @@ h1 {
   text-align: center;
 }
 
-main {
-  height: 100vh;
-  width: 100vw;
+.main {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
   align-content: center;
+  flex-grow: 1;
 }
 
 #container {
