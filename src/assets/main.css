@@ -13,7 +13,5 @@
     display: flex;
   }
 
-  #app {
-    padding: 0 2rem;
-  }
+  #app {}
 }
