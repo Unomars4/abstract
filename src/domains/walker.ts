@@ -1,7 +1,7 @@
 //Walker Class
 import p5 from 'p5'
 
-class Walker {
+export default class Walker {
   x: number
   y: number
   private readonly sketch: p5
