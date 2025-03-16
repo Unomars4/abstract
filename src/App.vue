@@ -45,13 +45,15 @@ main {
 
 footer {
   width: 100%;
-  height: 30px;
+  height: 5vh;
   background: lightgrey;
   border-top: darkgrey solid 1px;
 }
 
 header {
+  height: 5vh;
   width: 100%;
   border-bottom: solid darkgrey 1px;
+  background: lightgrey;
 }
 </style>
