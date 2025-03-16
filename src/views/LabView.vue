@@ -52,7 +52,7 @@ main {
 }
 
 #container {
-  border: solid 6px black;
+  border: dashed 6px black;
   height: fit-content;
   width: fit-content;
 }
