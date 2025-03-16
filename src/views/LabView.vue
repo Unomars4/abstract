@@ -1,21 +1,22 @@
 <script setup lang="ts">
+import Walker from "@/domains/walker";
 import p5 from "p5";
 import { onMounted, useTemplateRef } from "vue";
 
 const container = useTemplateRef<HTMLDivElement | undefined>("container");
 
 let sketch = function (p: p5) {
-  let circle_x = 5;
-  const screen_width = 500, screen_height = 410;
+  let walker: Walker;
+  const screen_width = 640, screen_height = 240;
   p.setup = function () {
+    walker = new Walker(p)
     p.createCanvas(screen_width, screen_height);
+    p.background(255)
   }
 
   p.draw = function () {
-    if (circle_x > screen_width) circle_x = 5;
-    p.background(255);
-    p.fill(125);
-    p.circle(circle_x++, 100, 50);
+    walker.show()
+    walker.step()
   }
 }
 
