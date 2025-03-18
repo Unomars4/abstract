@@ -41,7 +41,7 @@ aside {
   z-index: 1;
   width: 20%;
   height: 100%;
-  border-right: solid 1px darkgrey;
+  border-right: solid 1px var(--gray-3);
 }
 
 aside h1 {
@@ -61,7 +61,7 @@ header {
   z-index: 2;
   height: 5vh;
   width: 100%;
-  border-bottom: solid darkgrey 1px;
-  background: lightgrey;
+  border-bottom: solid var(--gray-3) 1px;
+  background: var(--gray-4);
 }
 </style>
