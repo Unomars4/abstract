@@ -4,11 +4,13 @@ import { RouterView } from 'vue-router'
 
 <template>
   <header>
-    <a href="/">
-      <h1>Abstract</h1>
-    </a>
-    <nav>
-    </nav>
+    <div class="header-content">
+      <a href="/">
+        <h1>Abstract</h1>
+      </a>
+      <nav>
+      </nav>
+    </div>
   </header>
 
   <aside class="sidenav">
@@ -16,7 +18,9 @@ import { RouterView } from 'vue-router'
   </aside>
 
   <main>
-    <RouterView />
+    <div class="view-container">
+      <RouterView />
+    </div>
     <footer>
       <div class="footer-content">
         <h3>Abstract</h3>
@@ -74,13 +78,20 @@ main {
 }
 
 footer {
+  padding: 5px;
   background: var(--gray-4);
+  border-top: 1px solid var(--gray-3);
 }
 
 header {
   z-index: 2;
-  height: 5vh;
   width: 100%;
   border-bottom: solid var(--gray-3) 1px;
+  padding: 5px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
 }
 </style>
