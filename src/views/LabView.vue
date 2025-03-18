@@ -29,7 +29,7 @@ onMounted(() => {
 
 
 <template>
-  <div class="main">
+  <div class="content">
     <div id="container" ref="container"></div>
   </div>
 </template>
@@ -41,10 +41,10 @@ h1 {
   text-align: center;
 }
 
-.main {
-  height: 100%;
+.content {
+  height: 200vh;
+  width: 80%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
   align-content: center;
@@ -52,7 +52,7 @@ h1 {
 }
 
 #container {
-  border: dashed 6px darkgrey;
+  border: dashed 2px var(--gray-3);
   height: fit-content;
   width: fit-content;
 }

@@ -3,6 +3,7 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
+
   <header>
     <a href="/">
       <h1>Abstract</h1>
@@ -11,21 +12,24 @@ import { RouterView } from 'vue-router'
     </nav>
   </header>
 
-  <main>
-    <aside>
-      <h1>SideNav</h1>
-    </aside>
+  <aside class="sidenav">
+    <h1>SideNav</h1>
+  </aside>
 
-    <div class="wrapper">
-      <RouterView />
-    </div>
+  <main>
+    <RouterView />
   </main>
+
+  <aside class="toc">
+    <h1>TOC</h1>
+  </aside>
 
 </template>
 
 <style scoped>
-aside,
-header {
+.sidenav,
+header,
+.toc {
   position: fixed;
 }
 
@@ -35,6 +39,13 @@ h1 {
 
 .wrapper {
   flex-grow: 1;
+}
+
+.toc {
+  border-left: 1px solid var(--gray-3);
+  height: 45%;
+  right: 0;
+  top: 0;
 }
 
 aside {
