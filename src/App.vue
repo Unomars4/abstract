@@ -3,7 +3,6 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-
   <header>
     <a href="/">
       <h1>Abstract</h1>
@@ -18,12 +17,17 @@ import { RouterView } from 'vue-router'
 
   <main>
     <RouterView />
+    <footer>
+      <div class="footer-content">
+        <h3>Abstract</h3>
+        <p>Copyright © 2024 Une Nyide.</p>
+      </div>
+    </footer>
   </main>
 
   <aside class="toc">
     <h1>TOC</h1>
   </aside>
-
 </template>
 
 <style scoped>
@@ -31,9 +35,11 @@ import { RouterView } from 'vue-router'
 header,
 .toc {
   position: fixed;
+  background: white;
 }
 
-h1 {
+h1,
+h3 {
   font-weight: 900;
 }
 
@@ -42,8 +48,8 @@ h1 {
 }
 
 .toc {
-  border-left: 1px solid var(--gray-3);
   height: 45%;
+  width: 20%;
   right: 0;
   top: 0;
 }
@@ -63,16 +69,18 @@ aside h1 {
 
 main {
   height: 100%;
-  width: 100vw;
-  display: flex;
+  width: 80%;
+  float: right;
 }
 
+footer {
+  background: var(--gray-4);
+}
 
 header {
   z-index: 2;
   height: 5vh;
   width: 100%;
   border-bottom: solid var(--gray-3) 1px;
-  background: var(--gray-4);
 }
 </style>
