@@ -29,18 +29,16 @@ onMounted(() => {
 
 
 <template>
-  <div id="container" ref="container"></div>
+  <div class="page-content">
+    <div id="container" ref="container"></div>
+  </div>
 </template>
 
 
 <style scoped lang="css">
-h1 {
-  font-weight: 900;
-  text-align: center;
-}
+.page-content {}
 
 #container {
-  flex-basis: 70%;
   border: dashed 2px var(--gray-3);
   height: fit-content;
   width: fit-content;
