@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Link from "@/components/Link.vue"
+import Search from "@/components/Search.vue";
 </script>
 
 <template>
@@ -15,6 +16,7 @@ import Link from "@/components/Link.vue"
         <div class="nav-btn">
           <Link :href="'/chapters'" :blank-target="false">Chapters</Link>
         </div>
+        <Search />
       </nav>
     </div>
   </header>
