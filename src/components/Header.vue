@@ -13,7 +13,7 @@ import Link from "@/components/Link.vue"
           <Link :href="'/docs'" :blank-target="false">Docs</Link>
         </div>
         <div class="nav-btn">
-          <Link :href="'/chapters'" :blank-target="false">Chapter</Link>
+          <Link :href="'/chapters'" :blank-target="false">Chapters</Link>
         </div>
       </nav>
     </div>
