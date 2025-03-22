@@ -39,17 +39,8 @@ h1 {
   text-align: center;
 }
 
-.content {
-  height: 100vh;
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-content: center;
-  flex-grow: 1;
-}
-
 #container {
+  flex-basis: 70%;
   border: dashed 2px var(--gray-3);
   height: fit-content;
   width: fit-content;
