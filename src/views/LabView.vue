@@ -29,9 +29,7 @@ onMounted(() => {
 
 
 <template>
-  <div class="content">
-    <div id="container" ref="container"></div>
-  </div>
+  <div id="container" ref="container"></div>
 </template>
 
 

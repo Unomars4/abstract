@@ -14,28 +14,26 @@ import { RouterView } from 'vue-router'
   </header>
 
   <main>
-    <div class="view-container">
-      <aside class="sidenav">
-        <h1>SideNav</h1>
-      </aside>
+    <aside class="sidenav">
+      <h1>SideNav</h1>
+    </aside>
+    <div>
       <RouterView />
-      <aside class="toc">
-        <h1>TOC</h1>
-      </aside>
+      <footer>
+        <div class="footer-content">
+          <h3>Abstract</h3>
+          <p>Copyright © 2024 Une Nyide.</p>
+        </div>
+      </footer>
     </div>
-    <footer>
-      <div class="footer-content">
-        <h3>Abstract</h3>
-        <p>Copyright © 2024 Une Nyide.</p>
-      </div>
-    </footer>
+    <aside class="toc">
+      <h1>TOC</h1>
+    </aside>
   </main>
 </template>
 
 <style scoped>
-.sidenav,
-header,
-.toc {
+header {
   position: sticky;
   background: white;
 }
@@ -52,9 +50,7 @@ h3 {
 .toc {
   height: 45%;
   width: 20%;
-  float: right;
   right: 0;
-  top: 30px;
 }
 
 aside {
@@ -67,7 +63,6 @@ aside {
 aside h1 {
   text-align: center;
   position: relative;
-  top: 30px;
 }
 
 main {
