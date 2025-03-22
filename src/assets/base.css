@@ -37,10 +37,7 @@
   --orange: #d65d0e;
   --orange-1: #fe8019;
   --orange-2: #af3a03;
-}
 
-/* semantic color variables for this project */
-:root {
   --color-background: rgba(0, 0, 0, 1);
   --color-background-soft: var(--vt-c-white-soft);
   --color-background-mute: var(--vt-c-white-mute);
