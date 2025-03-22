@@ -8,6 +8,10 @@
 </template>
 
 <style scoped>
+h3 {
+  font-weight: 900;
+}
+
 footer {
   padding: 5px;
   background: var(--gray-4);
