@@ -18,6 +18,11 @@ import Search from "@/components/Search.vue";
         </div>
         <Search />
       </nav>
+      <div class="other-items">
+        Light
+        <button>Github</button>
+        <p class="version">2.0.0</p>
+      </div>
     </div>
   </header>
 </template>
@@ -38,11 +43,17 @@ header {
 }
 
 nav,
-.header-content {
+.header-content,
+.other-items {
   display: flex;
 }
 
-nav {
+.header-content {
+  justify-content: space-between;
+}
+
+nav,
+.other-items {
   gap: 15px;
 }
 </style>
