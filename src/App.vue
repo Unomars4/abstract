@@ -17,7 +17,7 @@ import { RouterView } from 'vue-router'
     <aside class="sidenav">
       <h1>SideNav</h1>
     </aside>
-    <div>
+    <div class="content">
       <RouterView />
       <footer>
         <div class="footer-content">
@@ -53,7 +53,7 @@ h3 {
   right: 0;
 }
 
-aside {
+.sidenav {
   z-index: 1;
   width: 20%;
   height: 100%;
@@ -67,8 +67,9 @@ aside h1 {
 
 main {
   height: 100%;
-  width: 80%;
-  float: right;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 footer {
