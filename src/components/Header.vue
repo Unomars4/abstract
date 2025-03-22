@@ -5,10 +5,16 @@ import Link from "@/components/Link.vue"
 <template>
   <header>
     <div class="header-content">
-      <Link href="/">
+      <Link :href="'/'" :blank-target="false">
       <h2>Abstract </h2>
       </Link>
       <nav>
+        <div class="nav-btn">
+          <Link :href="'/docs'" :blank-target="false">Docs</Link>
+        </div>
+        <div class="nav-btn">
+          <Link :href="'/chapters'" :blank-target="false">Chapter</Link>
+        </div>
       </nav>
     </div>
   </header>
@@ -25,7 +31,16 @@ header {
   background: white;
   z-index: 2;
   width: 100%;
-  border-bottom: solid var(--gray - 3) 1px;
+  border-bottom: solid var(--gray-3) 1px;
   padding: 5px;
+}
+
+nav,
+.header-content {
+  display: flex;
+}
+
+nav {
+  gap: 15px;
 }
 </style>
