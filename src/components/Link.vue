@@ -1,8 +1,11 @@
-<script lang="ts">
+<script setup lang="ts">
+import { defineProps } from 'vue';
+
 type LinkProps = {
   href: string
   blankTarget: boolean
 }
+
 const { href, blankTarget } = defineProps<LinkProps>();
 </script>
 
