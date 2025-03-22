@@ -2,7 +2,7 @@
   <header>
     <div class="header-content">
       <a href="/">
-        <h1>Abstract</h1>
+        <h2>Abstract</h2>
       </a>
       <nav>
       </nav>
@@ -11,7 +11,7 @@
 </template>
 
 <style scoped lang="css">
-h1 {
+h2 {
   font-weight: 900;
 }
 
