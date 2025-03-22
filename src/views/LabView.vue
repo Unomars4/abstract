@@ -42,7 +42,7 @@ h1 {
 }
 
 .content {
-  height: 200vh;
+  height: 100vh;
   width: 80%;
   display: flex;
   justify-content: center;

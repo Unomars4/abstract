@@ -13,13 +13,15 @@ import { RouterView } from 'vue-router'
     </div>
   </header>
 
-  <aside class="sidenav">
-    <h1>SideNav</h1>
-  </aside>
-
   <main>
     <div class="view-container">
+      <aside class="sidenav">
+        <h1>SideNav</h1>
+      </aside>
       <RouterView />
+      <aside class="toc">
+        <h1>TOC</h1>
+      </aside>
     </div>
     <footer>
       <div class="footer-content">
@@ -28,17 +30,13 @@ import { RouterView } from 'vue-router'
       </div>
     </footer>
   </main>
-
-  <aside class="toc">
-    <h1>TOC</h1>
-  </aside>
 </template>
 
 <style scoped>
 .sidenav,
 header,
 .toc {
-  position: fixed;
+  position: sticky;
   background: white;
 }
 
@@ -54,8 +52,9 @@ h3 {
 .toc {
   height: 45%;
   width: 20%;
+  float: right;
   right: 0;
-  top: 0;
+  top: 30px;
 }
 
 aside {
@@ -68,7 +67,7 @@ aside {
 aside h1 {
   text-align: center;
   position: relative;
-  top: 50%;
+  top: 30px;
 }
 
 main {
