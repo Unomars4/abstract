@@ -46,6 +46,7 @@ nav,
 .header-content,
 .other-items {
   display: flex;
+  align-self: center;
 }
 
 .header-content {
