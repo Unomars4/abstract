@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Link from "@/components/Link.vue"
-import Search from "@/components/Search.vue";
+import Link from "@/components/ui/Link.vue"
+import Search from "@/components/ui/Search.vue";
 </script>
 
 <template>

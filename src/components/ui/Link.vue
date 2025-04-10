@@ -12,3 +12,13 @@ const { href, blankTarget } = defineProps<LinkProps>();
     <slot></slot>
   </a>
 </template>
+
+<style scoped>
+a {
+  color: black;
+}
+
+a:visited {
+  color: orange;
+}
+</style>
