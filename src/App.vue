@@ -1,19 +1,21 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
-import Header from "@/components/Header.vue"
-import Footer from "@/components/Footer.vue"
+import { RouterView } from 'vue-router';
 </script>
 
 <template>
-  <Header />
   <main>
     <RouterView />
-    <Footer />
   </main>
 </template>
 
 <style scoped>
 main {
-  height: 100%;
+  height: 100vh;
+  width: 60%;
+  margin: 0 auto;
+  border: solid 2px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

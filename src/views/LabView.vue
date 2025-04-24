@@ -1,28 +1,15 @@
 <script setup lang="ts">
-import Walker from "@/domains/walker";
 import p5 from "p5";
 import { onMounted, useTemplateRef } from "vue";
+import { RandomWalker } from "@/sketches/randomness";
 
 const container = useTemplateRef<HTMLDivElement | undefined>("container");
 
-let sketch = function (p: p5) {
-  let walker: Walker;
-  const screen_width = 640, screen_height = 240;
-  p.setup = function () {
-    p.createCanvas(screen_width, screen_height);
-    walker = new Walker(p)
-    p.background(255)
-  }
 
-  p.draw = function () {
-    walker.step()
-    walker.show()
-  }
-}
 
 onMounted(() => {
-  if (container.value)
-    new p5(sketch, container.value)
+  if (!container.value) return;
+  new p5(RandomWalker, container.value)
 })
 </script>
 

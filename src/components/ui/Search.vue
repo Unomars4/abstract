@@ -3,7 +3,7 @@ type SearchBarProps = {
   placeholder?: string
 }
 
-const { placeholder = "Search" } = defineProps<SearchBarProps>()
+const { placeholder = "Search" } = defineProps<SearchBarProps>();
 </script>
 
 <template>
