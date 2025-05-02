@@ -1,20 +1,10 @@
 <script setup lang="ts">
-import p5 from "p5";
-import { onMounted, useTemplateRef } from "vue";
-import { RandomWalker } from "@/sketches/randomness";
-
-const container = useTemplateRef<HTMLDivElement | undefined>("container");
-
-onMounted(() => {
-  if (!container.value) return;
-  new p5(RandomWalker, container.value)
-})
+import Sketch from '@/components/sketch.vue';
+import { RandomWalker } from '@/sketches/randomness';
 </script>
 
-
-
 <template>
-  <div id="container" ref="container"></div>
+  <Sketch container-id="container" :sketch="RandomWalker" />
 </template>
 
 
