@@ -1,15 +1,17 @@
 //Walker Class
 import p5 from 'p5';
 
-export default class Walker {
+export class Walker {
   x: number;
   y: number;
-  private readonly sketch: p5;
+  protected readonly sketch: p5;
+  name: string;
 
   constructor(sketch: p5) {
     this.x = sketch.width / 2;
     this.y = sketch.height / 2;
     this.sketch = sketch;
+    this.name = 'Basic';
   }
 
   public show() {
@@ -30,5 +32,20 @@ export default class Walker {
     } else {
       this.y--;
     }
+  }
+}
+
+export class AdvancedWalker extends Walker {
+  constructor(sketch: p5) {
+    super(sketch);
+    this.name = 'Advanced';
+  }
+
+  public step(): void {
+    const xStep = this.sketch.random(-1, 1);
+    const yStep = this.sketch.random(-1, 1);
+
+    this.x += xStep;
+    this.y += yStep;
   }
 }

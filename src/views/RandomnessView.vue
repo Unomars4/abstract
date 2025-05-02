@@ -1,20 +1,12 @@
 <script setup lang="ts">
 import Sketch from '@/components/sketch.vue';
-import { RandomWalker } from '@/sketches/randomness';
+import { RandomWalker, AdvancedRandomWalker } from '@/sketches/randomness';
 </script>
 
 <template>
   <Sketch container-id="container" :sketch="RandomWalker" />
+  <Sketch container-id="container-1" :sketch="AdvancedRandomWalker" />
 </template>
 
 
-<style scoped lang="css">
-#container {
-  border: solid 1px var(--muted-foreground);
-  border-radius: var(--radius-xl);
-  height: fit-content;
-  width: fit-content;
-  overflow: hidden;
-  margin: 5px;
-}
-</style>
+<style scoped lang="css"></style>
