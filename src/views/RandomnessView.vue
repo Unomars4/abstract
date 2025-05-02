@@ -5,8 +5,6 @@ import { RandomWalker } from "@/sketches/randomness";
 
 const container = useTemplateRef<HTMLDivElement | undefined>("container");
 
-
-
 onMounted(() => {
   if (!container.value) return;
   new p5(RandomWalker, container.value)
@@ -16,17 +14,14 @@ onMounted(() => {
 
 
 <template>
-  <div class="page-content">
-    <div id="container" ref="container"></div>
-  </div>
+  <div id="container" ref="container"></div>
 </template>
 
 
 <style scoped lang="css">
-.page-content {}
-
 #container {
-  border: dashed 2px var(--gray-3);
+  border: solid 1px var(--muted-foreground);
+  border-radius: var(--radius);
   height: fit-content;
   width: fit-content;
 }

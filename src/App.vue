@@ -10,12 +10,7 @@ import { RouterView } from 'vue-router';
 
 <style scoped>
 main {
-  height: 100vh;
-  width: 60%;
+  height: 100%;
   margin: 0 auto;
-  border: solid 2px black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 </style>

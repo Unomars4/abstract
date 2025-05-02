@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
-import LabView from '../views/LabView.vue';
+import RandomChapter from '../views/RandomnessView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -11,9 +11,9 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/lab',
-      name: 'lab',
-      component: LabView,
+      path: '/randomness',
+      name: 'randomness',
+      component: RandomChapter,
     },
   ],
 });
