@@ -21,8 +21,10 @@ onMounted(() => {
 <style scoped lang="css">
 #container {
   border: solid 1px var(--muted-foreground);
-  border-radius: var(--radius);
+  border-radius: var(--radius-xl);
   height: fit-content;
   width: fit-content;
+  overflow: hidden;
+  margin: 5px;
 }
 </style>
