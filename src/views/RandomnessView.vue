@@ -1,11 +1,19 @@
 <script setup lang="ts">
 import Sketch from '@/components/sketch.vue';
-import { RandomWalker, AdvancedRandomWalker } from '@/sketches/randomness';
+import p5 from 'p5';
+import { RandomWalker, AdvancedRandomWalker, NormalDistributionGraph } from '@/sketches/randomness';
+
+const sketches: (p: p5) => void[] = [
+  RandomWalker,
+  AdvancedRandomWalker,
+  NormalDistributionGraph
+];
 </script>
 
 <template>
-  <Sketch container-id="container" :sketch="RandomWalker" />
-  <Sketch container-id="container-1" :sketch="AdvancedRandomWalker" />
+  <div v-for="(sketch, idx) in sketches" :key="`container-${idx}`">
+    <Sketch :container-id="`container-${idx}`" :sketch="sketch" />
+  </div>
 </template>
 
 

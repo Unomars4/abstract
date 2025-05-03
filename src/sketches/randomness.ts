@@ -29,3 +29,10 @@ export const AdvancedRandomWalker = function (p: p5) {
     walker.show();
   };
 };
+
+export const NormalDistributionGraph = function (p: p5) {
+  let randoms = [];
+  p.setup = function () {
+    p.createCanvas(SCREEN_WIDTH, SCREEN_HEIGHT);
+  };
+};
