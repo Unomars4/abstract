@@ -4,6 +4,7 @@
 <template>
   <div class="logo-container">
     <h1>Abstract</h1>
+    <h6>Sub heading</h6>
   </div>
 </template>
 
@@ -13,11 +14,14 @@ h1 {
   font-size: 120px;
   text-align: center;
   font-weight: 800;
+  font-style: italic;
 }
 
 .logo-container {
   height: 100%;
   display: flex;
+  line-height: 0.7;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
