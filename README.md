@@ -1,4 +1,4 @@
-# Abstract 🎭 🖌️
+# Abstract 
 
-💡 Just a collection of my thought experiments.😛 
+Just a collection of my thought experiments. 
 
