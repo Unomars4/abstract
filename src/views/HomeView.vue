@@ -4,7 +4,7 @@
 <template>
   <div class="logo-container">
     <h1>Abstract</h1>
-    <h6>Sub heading</h6>
+    <h6>Do Dope Shiit</h6>
   </div>
 </template>
 
