@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@fontsource-variable/newsreader": "^5.2.7",
+    "d3": "^7.9.0",
     "p5": "^1.11.3",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
