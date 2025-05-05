@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import useChartDimensions from '@/composables/useChartDimensions';
+import Chart from './chart.vue';
 
 type TimeLineProps<T> = {
   data: Array<T>;
@@ -15,6 +16,8 @@ useChartDimensions("timeline");
 
 <template>
   <div class="timeline" ref="timeline">
+    <Chart chartId="timeline">
+    </Chart>
   </div>
 </template>
 

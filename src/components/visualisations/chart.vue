@@ -1,15 +1,13 @@
 <script setup lang="ts">
-import useChartContext from '@/composables/useChartContext';
-import type { ChartId } from '@/composables/useChartContext';
+import type { ChartDimensions } from '@/composables/useChartDimensions';
+
 
 type ChartProps = {
-  chartId: ChartId
+  dimensions: ChartDimensions
 }
 
-const { chartId } = defineProps<ChartProps>()
-const { getChartDimensions } = useChartContext();
+const { dimensions: { width, height } } = defineProps<ChartProps>()
 
-const { width, height } = getChartDimensions(chartId)
 </script>
 
 <template>

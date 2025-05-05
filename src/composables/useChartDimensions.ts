@@ -35,7 +35,6 @@ export default function useChartDimensions(refName: string): ChartDimensions {
     dimensions.height = height;
     dimensions.boundedHeight = dimensions.height - dimensions.marginTop - dimensions.marginBottom;
     dimensions.boundedWidth = dimensions.width - dimensions.marginLeft - dimensions.marginRight;
-    addChartContext({ chartId: refName, chartDimension: dimensions });
   });
 
   return dimensions;
