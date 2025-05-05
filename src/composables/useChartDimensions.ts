@@ -1,4 +1,4 @@
-import { useTemplateRef, type ShallowRef } from 'vue';
+import { onMounted, useTemplateRef, type ShallowRef } from 'vue';
 
 export type ChartDimensions = {
   width: number;
@@ -13,14 +13,24 @@ export type ChartDimensions = {
 
 export type ChartDimensionsRef = Readonly<ShallowRef<HTMLDivElement | null>>;
 
-export type UseChartTuple = [ChartDimensionsRef, ChartDimensions];
+export default function useChartDimensions(refName: string): ChartDimensions {
+  const ref = useTemplateRef<HTMLElement>(refName),
+    dimensions: ChartDimensions = {
+      width: window.innerWidth * 0.9,
+      height: 400,
+      marginTop: 15,
+      marginBottom: 40,
+      marginLeft: 60,
+      marginRight: 15,
+      boundedWidth: 0,
+      boundedHeight: 0,
+    };
 
-export default function useChartDimensions(): UseChartTuple {
-  const ref = useTemplateRef<HTMLDivElement>('timeline'),
-    dimensions: ChartDimensions = {};
+  onMounted(() => {
+    if (!ref.value) return;
+    dimensions.boundedHeight = dimensions.height - dimensions.marginTop - dimensions.marginBottom;
+    dimensions.boundedWidth = dimensions.width - dimensions.marginLeft - dimensions.marginRight;
+  });
 
-  if (ref.value) {
-    console.log('Ref value:', ref.value);
-  }
-  return [ref, dimensions];
+  return dimensions;
 }

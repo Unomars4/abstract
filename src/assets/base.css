@@ -197,6 +197,15 @@ a:visited {
   color: var(--light-2);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Newsreader Variable";
+}
+
 body {
   min-height: 100vh;
   color: var(--foreground);
