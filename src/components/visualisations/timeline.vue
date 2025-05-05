@@ -10,13 +10,12 @@ type TimeLineProps<T> = {
 
 
 const { data, xAccessor, yAcessor, label } = defineProps<TimeLineProps>();
-const dimensions = useChartDimensions("timeline");
-
-console.log({ dimensions })
+useChartDimensions("timeline");
 </script>
 
 <template>
-  <div class="timeline" ref="timeline"></div>
+  <div class="timeline" ref="timeline">
+  </div>
 </template>
 
 <style scoped lang="css">

@@ -1,4 +1,5 @@
 import { onMounted, useTemplateRef, type ShallowRef } from 'vue';
+import useChartContext from './useChartContext';
 
 export type ChartDimensions = {
   width: number;
@@ -24,7 +25,8 @@ export default function useChartDimensions(refName: string): ChartDimensions {
       marginRight: 15,
       boundedWidth: 0,
       boundedHeight: 0,
-    };
+    },
+    { addChartContext } = useChartContext();
 
   onMounted(() => {
     if (!ref.value) return;
@@ -33,6 +35,7 @@ export default function useChartDimensions(refName: string): ChartDimensions {
     dimensions.height = height;
     dimensions.boundedHeight = dimensions.height - dimensions.marginTop - dimensions.marginBottom;
     dimensions.boundedWidth = dimensions.width - dimensions.marginLeft - dimensions.marginRight;
+    addChartContext({ chartId: refName, chartDimension: dimensions });
   });
 
   return dimensions;
