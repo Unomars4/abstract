@@ -11,6 +11,7 @@ export type AddChartContextArgs = {
 export type UseChartContext = {
   chartContexts: ChartContexts;
   addChartContext: ({ chartId, chartDimension }: AddChartContextArgs) => void;
+  getChartDimensions: (chartId: ChartId) => ChartDimensions | null;
 };
 
 export default function useChartContext(): UseChartContext {
@@ -20,5 +21,12 @@ export default function useChartContext(): UseChartContext {
     chartContexts.value[chartId] = chartDimension;
   };
 
-  return { chartContexts, addChartContext };
+  const getChartDimensions = (chartId: ChartId): ChartDimensions | null => {
+    if (Object.keys(chartContexts.value).includes(chartId)) {
+      return chartContexts.value[chartId];
+    }
+    return null;
+  };
+
+  return { chartContexts, addChartContext, getChartDimensions };
 }
