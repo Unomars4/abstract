@@ -13,6 +13,10 @@ export type ChartDimensions = {
 
 export type ChartDimensionsRef = Readonly<ShallowRef<HTMLDivElement | null>>;
 
+// Regulates the chart boundaries, so it's positioned appropriately
+// Get the container's dimensions - width, height
+// uses default dimensions to size the graph space, but can also take in dimension options
+// Dimensions must be reactive and change according to screen size
 export default function useChartDimensions(refName: string): ChartDimensions {
   const ref = useTemplateRef<HTMLElement>(refName),
     dimensions: ChartDimensions = reactive({

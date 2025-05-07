@@ -17,10 +17,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div
-    id="container"
-    :ref="containerId"
-  ></div>
+  <div id="container" :ref="containerId"></div>
 </template>
 
 <style scoped lang="css">

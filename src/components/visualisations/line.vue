@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import * as d3 from 'd3';
-import { useChartsStore } from '@/stores/charts';
-import type { ClimateDay } from '@/types';
 
 type LineProps = {
   type?: 'line' | 'area';
@@ -20,15 +18,7 @@ const {
   yAccessor,
   y0Accessor,
 } = defineProps<LineProps>();
-const store = useChartsStore<ClimateDay>()(), data = store.getChartData(chartCtx);
 
-const lineGenerator = d3[type]().x(xAccessor).y(yAccessor).curve(interpolation);
-
-console.log(lineGenerator(data))
-
-if (type === 'area') {
-  lineGenerator.y0(y0Accessor).y1(yAccessor);
-}
 </script>
 
 <template>

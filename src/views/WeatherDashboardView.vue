@@ -1,8 +1,27 @@
 <script setup lang="ts">
+import Timeline from '@/components/visualisations/timeline.vue';
+import useGetChartData from '@/composables/useGetChartData';
+import type { ClimateDay } from '@/types';
+import { dateParse } from '@/utils';
+import { provide } from 'vue';
+
+const DATA_URL = "../../data/nyc_weather_data.json";
+const { data, error, loading } = useGetChartData<ClimateDay>(DATA_URL);
+
+
+const xAccessor = (dataObj: ClimateDay) => dateParse(dataObj.date);
+const yAccessor = (dataObj: ClimateDay) => dataObj.temperatureMax;
+
+provide("xAccessor", xAccessor);
+provide("yAccessor", yAccessor);
 </script>
 
 <template>
-  <h1>Weather Dashboard</h1>
+  <p v-if="error" class="error">{{ error }}</p>
+  <div class="dashboard" v-if="!loading && !error">
+    <h1>Weather Dashboard</h1>
+    <Timeline :data="data.data" />
+  </div>
 </template>
 
 <style lang="css">
@@ -13,6 +32,9 @@ h1 {
 
 .dashboard {
   height: 100%;
+  width: 100%;
+  border: 2px solid black;
+  overflow: hidden;
 }
 
 .main-chart,
