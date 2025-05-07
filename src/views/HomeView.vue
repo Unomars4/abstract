@@ -1,5 +1,4 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="logo-container">
@@ -10,7 +9,7 @@
 
 <style scoped>
 h1 {
-  font-family: "Newsreader Variable";
+  font-family: 'Newsreader Variable';
   font-size: 120px;
   text-align: center;
   font-weight: 800;

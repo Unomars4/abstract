@@ -1,19 +1,8 @@
 <script setup lang="ts">
-import Timeline from '@/components/visualisations/timeline.vue';
 </script>
 
 <template>
   <h1>Weather Dashboard</h1>
-  <div class="dashboard">
-    <section class="main-chart">
-      <Timeline />
-    </section>
-    <section class="side-charts">
-      <div class="scatterplot-container">
-      </div>
-      <div class="histogram-container"></div>
-    </section>
-  </div>
 </template>
 
 <style lang="css">
@@ -29,5 +18,9 @@ h1 {
 .main-chart,
 .side-charts {
   height: 50%;
+}
+
+.error {
+  color: var(--red-2);
 }
 </style>

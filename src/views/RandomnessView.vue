@@ -1,12 +1,16 @@
 <script setup lang="ts">
-import Sketch from '@/components/sketch.vue';
+import Sketch from '@/components/gen-art/sketch.vue';
 import p5 from 'p5';
-import { RandomWalker, AdvancedRandomWalker, NormalDistributionGraph } from '@/sketches/randomness';
+import {
+  RandomWalker,
+  AdvancedRandomWalker,
+  NormalDistributionGraph,
+} from '@/sketches/randomness';
 
 const sketches: (p: p5) => void[] = [
   RandomWalker,
   AdvancedRandomWalker,
-  NormalDistributionGraph
+  NormalDistributionGraph,
 ];
 </script>
 
@@ -15,6 +19,5 @@ const sketches: (p: p5) => void[] = [
     <Sketch :container-id="`container-${idx}`" :sketch="sketch" />
   </div>
 </template>
-
 
 <style scoped lang="css"></style>

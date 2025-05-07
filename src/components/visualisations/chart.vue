@@ -1,18 +1,11 @@
 <script setup lang="ts">
-import type { ChartDimensions } from '@/composables/useChartDimensions';
-
-
-type ChartProps = {
-  dimensions: ChartDimensions
-}
-
-const { dimensions: { width, height } } = defineProps<ChartProps>()
-
 </script>
 
 <template>
-  <svg :width="width" :height="height" class="chart">
-    <slot />
+  <svg :width="" :height="" class="chart">
+    <g :transform="">
+      <slot />
+    </g>
   </svg>
 </template>
 

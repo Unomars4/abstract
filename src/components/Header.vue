@@ -1,20 +1,31 @@
 <script setup lang="ts">
-import Link from "@/components/ui/Link.vue"
-import Search from "@/components/ui/Search.vue";
+import Link from '@/components/ui/Link.vue';
+import Search from '@/components/ui/Search.vue';
 </script>
 
 <template>
   <header>
     <div class="header-content">
-      <Link :href="'/'" :blank-target="false">
-      <h2>Abstract </h2>
+      <Link
+        :href="'/'"
+        :blank-target="false"
+      >
+        <h2>Abstract</h2>
       </Link>
       <nav>
         <div class="nav-btn">
-          <Link :href="'/docs'" :blank-target="false">Docs</Link>
+          <Link
+            :href="'/docs'"
+            :blank-target="false"
+            >Docs</Link
+          >
         </div>
         <div class="nav-btn">
-          <Link :href="'/chapters'" :blank-target="false">Chapters</Link>
+          <Link
+            :href="'/chapters'"
+            :blank-target="false"
+            >Chapters</Link
+          >
         </div>
         <Search />
       </nav>

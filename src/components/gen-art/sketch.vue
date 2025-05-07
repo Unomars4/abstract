@@ -5,19 +5,22 @@ import p5 from 'p5';
 export type SketchProp = {
   containerId: string;
   sketch: (p: p5) => void;
-}
+};
 
-const { containerId, sketch } = defineProps<SketchProp>()
+const { containerId, sketch } = defineProps<SketchProp>();
 const container = useTemplateRef<HTMLDivElement | undefined>(containerId);
 
 onMounted(() => {
   if (!container.value) return;
-  new p5(sketch, container.value)
-})
+  new p5(sketch, container.value);
+});
 </script>
 
 <template>
-  <div id="container" :ref="containerId"></div>
+  <div
+    id="container"
+    :ref="containerId"
+  ></div>
 </template>
 
 <style scoped lang="css">
@@ -28,6 +31,8 @@ onMounted(() => {
   width: fit-content;
   overflow: hidden;
   margin: 5px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px -1px rgba(0, 0, 0, .1);
+  box-shadow:
+    0 1px 3px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px -1px rgba(0, 0, 0, 0.1);
 }
 </style>
