@@ -1,4 +1,4 @@
-import { reactive } from 'vue';
+import { onMounted, reactive } from 'vue';
 
 export type ChartDimensions = {
   width: number;
@@ -11,25 +11,46 @@ export type ChartDimensions = {
   boundedWidth: number;
 };
 
-// Regulates the chart boundaries, so it's positioned appropriately
-// Get the container's dimensions - width, height
-// uses default dimensions to size the graph space, but can also take in dimension options
-// Dimensions must be reactive and change according to screen size
+export type ChartDimensionsOption =
+  | Omit<ChartDimensions, 'width' | 'height' | 'boundedHeight' | 'boundedWidth'>
+  | {};
+
 export default function useChartDimensions(
   containerWidth: number,
   containerHeight: number,
-  options,
-): ChartDimensions {
-  const dimensions: ChartDimensions = reactive({
-    width: containerWidth * 0.9,
-    height: containerHeight,
-    marginTop: 15,
-    marginBottom: 40,
-    marginLeft: 60,
-    marginRight: 15,
-    boundedWidth: 0,
-    boundedHeight: 0,
+  options: ChartDimensionsOption = {},
+): { state: ChartDimensions } {
+  const dimensionState: { state: ChartDimensions } = reactive({
+    state: {
+      width: containerWidth * 0.9,
+      height: containerHeight,
+      marginTop: 15,
+      marginBottom: 40,
+      marginLeft: 60,
+      marginRight: 15,
+      boundedWidth: 0,
+      boundedHeight: 0,
+    },
   });
 
-  return dimensions;
+  if (Object.keys(options).length > 0) {
+    dimensionState.state = { ...dimensionState.state, ...options };
+  }
+
+  function calculateBoundedProperties() {
+    dimensionState.state.boundedHeight =
+      dimensionState.state.height -
+      dimensionState.state.marginTop -
+      dimensionState.state.marginBottom;
+    dimensionState.state.boundedWidth =
+      dimensionState.state.width -
+      dimensionState.state.marginLeft -
+      dimensionState.state.marginRight;
+  }
+
+  onMounted(() => {
+    calculateBoundedProperties();
+  });
+
+  return dimensionState;
 }
