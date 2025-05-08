@@ -1,4 +1,4 @@
-import { onMounted, reactive } from 'vue';
+import { onMounted, reactive, toValue, type Ref } from 'vue';
 
 export type ChartDimensions = {
   width: number;
@@ -16,14 +16,14 @@ export type ChartDimensionsOption =
   | {};
 
 export default function useChartDimensions(
-  containerWidth: number,
-  containerHeight: number,
+  containerWidth: Ref<number>,
+  containerHeight: Ref<number>,
   options: ChartDimensionsOption = {},
 ): { state: ChartDimensions } {
   const dimensionState: { state: ChartDimensions } = reactive({
     state: {
-      width: containerWidth * 0.9,
-      height: containerHeight,
+      width: toValue(containerWidth) * 0.9,
+      height: toValue(containerHeight),
       marginTop: 15,
       marginBottom: 40,
       marginLeft: 60,

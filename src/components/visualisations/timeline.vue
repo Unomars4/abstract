@@ -14,7 +14,9 @@ const yAccessor = inject<(dataObj: ClimateDay) => number>("yAccessor")!;
 <template>
   <p>{{ refId.toUpperCase() }}, H: {{ height }}px W:{{ width }}px</p>
   <div class="timeline" ref="timeline">
-    <p>{{ xAccessor(data[0]) }} {{ yAccessor(data[0]) }}</p>
+    <Chart :width="width" :height="height">
+      <p>{{ xAccessor(data[0]) }} {{ yAccessor(data[0]) }}</p>
+    </Chart>
   </div>
 </template>
 
