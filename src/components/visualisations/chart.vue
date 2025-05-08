@@ -1,8 +1,9 @@
 <script setup lang="ts">
+const { height, width } = defineProps<{ width: number; height: number }>()
 </script>
 
 <template>
-  <svg :width="" :height="" class="chart">
+  <svg :width="width" :height="height" class="chart">
     <g :transform="">
       <slot />
     </g>
