@@ -33,7 +33,6 @@ h1 {
 .dashboard {
   height: 100%;
   width: 100%;
-  border: 2px solid black;
   overflow: hidden;
 }
 
