@@ -19,7 +19,6 @@ provide("yAccessor", yAccessor);
 <template>
   <p v-if="error" class="error">{{ error }}</p>
   <div class="dashboard" v-if="!loading && !error">
-    <h1>Weather Dashboard</h1>
     <Timeline :data="data.data" />
   </div>
 </template>
@@ -33,6 +32,7 @@ h1 {
 .dashboard {
   height: 100%;
   width: 100%;
+  padding: 15px;
   overflow: hidden;
 }
 
