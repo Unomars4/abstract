@@ -1,3 +1,5 @@
+export type PossibleChartType = ClimateDay;
+
 export type ClimateDay = {
   time: number;
   summary: string;

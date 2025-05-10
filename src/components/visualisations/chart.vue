@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import useChartDimensions from '@/composables/useChartDimensions';
-
-const { height, width } = defineProps<{ width: number; height: number }>()
-const dimensions = useChartDimensions(width, height)
+const { height, width } = defineProps<{
+  width: number;
+  height: number;
+  marginLeft: number;
+  marginTop: number;
+}>()
 </script>
 
 <template>
   <svg :width="width" :height="height" class="chart">
-    <g :transform="`translate(${dimensions.state.marginLeft}, ${dimensions.state.marginTop})`">
+    <g :transform="`translate(${marginLeft}, ${marginTop})`">
       <slot />
     </g>
   </svg>
