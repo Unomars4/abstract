@@ -41,7 +41,7 @@ export default function useChartDimensions(options?: ChartDimensionsOption): {
     containerWidth: Ref<number>,
     containerHeight: Ref<number>,
   ) {
-    dimensions.value.width = toValue(containerWidth) * 0.9;
+    dimensions.value.width = Math.floor(toValue(containerWidth) * 0.9);
     dimensions.value.height = toValue(containerHeight);
 
     dimensions.value.boundedHeight =

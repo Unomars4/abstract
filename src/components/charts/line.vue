@@ -39,7 +39,7 @@ if (type === "area") {
 <style lang="css">
 .line-type--line {
   fill: none;
-  stroke: var(--orange-1);
+  stroke: var(--yellow-1);
   stroke-width: 2px;
 }
 </style>

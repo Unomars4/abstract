@@ -36,9 +36,8 @@ h1 {
   overflow: hidden;
 }
 
-.main-chart,
-.side-charts {
-  height: 50%;
+.main-chart {
+  height: 25%;
 }
 
 .error {
