@@ -62,4 +62,10 @@ const freezingAmount = yScale(32);
   fill: var(--blue-1);
   fill-opacity: 0.20;
 }
+
+.line-type--line {
+  fill: none;
+  stroke: var(--yellow-1);
+  stroke-width: 2px;
+}
 </style>

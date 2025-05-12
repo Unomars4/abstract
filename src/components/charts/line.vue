@@ -36,10 +36,4 @@ if (type === "area") {
   <path v-bind="$attrs" :class="`line line-type--${type}`" :d="lineGenerator(data)" />
 </template>
 
-<style lang="css">
-.line-type--line {
-  fill: none;
-  stroke: var(--yellow-1);
-  stroke-width: 2px;
-}
-</style>
+<style lang="css"></style>

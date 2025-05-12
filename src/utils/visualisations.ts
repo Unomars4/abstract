@@ -10,6 +10,6 @@ export const dateFormatter = (
     weekday: undefined,
     month: 'short',
     year: shortVersion ? undefined : 'numeric',
-    day: 'numeric',
+    day: shortVersion ? undefined : 'numeric',
   });
 };
