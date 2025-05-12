@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Timeline from '@/components/visualisations/timeline.vue';
+import Timeline from '@/components/charts/timeline.vue';
 import useGetChartData from '@/composables/useGetChartData';
 import type { ClimateDay } from '@/types';
 import { dateParse } from '@/utils/visualisations';
