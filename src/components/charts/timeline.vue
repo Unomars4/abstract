@@ -32,7 +32,7 @@ const xAccessorScaled = (dataObj: ClimateDay) => {
   yAccessorScaled = (dataObj: ClimateDay) => yScale(yAccessor(dataObj));
 
 const formatTick = (item: any) => {
-  return typeof item !== "number" ? dateFormatter(item.toString()) : item;
+  return typeof item !== "number" ? dateFormatter(item.toString(), true) : item;
 }
 </script>
 
