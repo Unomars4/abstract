@@ -4,6 +4,7 @@ import * as d3 from "d3";
 import Chart from './chart.vue';
 import Line from './line.vue';
 import Axis from './axes/axis.vue';
+import Indicator from './indicator.vue';
 import type { ClimateDay } from '@/types';
 import { inject } from 'vue';
 import { dateFormatter } from '@/utils/visualisations';
@@ -34,11 +35,14 @@ const xAccessorScaled = (dataObj: ClimateDay) => {
 const formatTick = (item: any) => {
   return typeof item !== "number" ? dateFormatter(item.toString(), true) : item;
 }
+const freezingAmount = yScale(32);
 </script>
 
 <template>
   <div class="timeline" ref="timeline">
     <Chart :width="width" :height="height" :margin-top="dimensions.marginTop" :margin-left="dimensions.marginLeft">
+      <Indicator cls-name="freezing" :dimensions="dimensions" :placement-amt="freezingAmount"
+        title="Freezing indicator" />
       <Line :data="data" :x-accessor="xAccessorScaled" :y-accessor="yAccessorScaled" />
       <Axis :format-tick="formatTick" :dimensions="dimensions" dimension="x" :scale="xScale" label="Days" />
       <Axis :format-tick="formatTick" :dimensions="dimensions" dimension="y" :scale="yScale" label="Max Temp" />
@@ -52,5 +56,10 @@ const formatTick = (item: any) => {
   border-radius: 15px;
   overflow: hidden;
   height: 50%;
+}
+
+.freezing {
+  fill: var(--blue-1);
+  fill-opacity: 0.20;
 }
 </style>
