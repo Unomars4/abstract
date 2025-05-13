@@ -44,7 +44,7 @@ const freezingAmount = yScale(32);
       <Indicator cls-name="freezing" :dimensions="dimensions" :placement-amt="freezingAmount"
         title="Freezing indicator" />
       <Line :data="data" :x-accessor="xAccessorScaled" :y-accessor="yAccessorScaled" />
-      <Axis :format-tick="formatTick" :dimensions="dimensions" dimension="x" :scale="xScale" label="Days" />
+      <Axis :format-tick="formatTick" :dimensions="dimensions" dimension="x" :scale="xScale" label="Months" />
       <Axis :format-tick="formatTick" :dimensions="dimensions" dimension="y" :scale="yScale" label="Max Temp" />
     </Chart>
   </div>

@@ -3,7 +3,7 @@
 <template>
   <div class="logo-container">
     <h1>Abstract</h1>
-    <h6>Do Dope Shiit</h6>
+    <h6>Do Dope Stuff</h6>
   </div>
 </template>
 
