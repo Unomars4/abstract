@@ -20,11 +20,11 @@ const ticks = scale.ticks(numberOfTicks);
 <template>
   <g class="axis axis-horzontal" :transform="`translate(0, ${dimensions.boundedHeight})`">
     <line class="axis_line" :x2="dimensions.boundedWidth" />
-    <text class="axis_tick" v-for="tick of ticks" :key="tick.toString()" :transform="`translate(${scale(tick)}, 25)`">
+    <text class="axis_tick" v-for="tick of ticks" :key="tick.toString()" :transform="`translate(${scale(tick)}, 13)`">
       {{ formatTick(tick) }}
     </text>
     <text v-if="label" class="axis_label" :transform="`translate(${dimensions.boundedWidth
-      / 2}, 60)`">
+      / 2}, 36)`">
       {{ label }}
     </text>
   </g>

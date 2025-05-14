@@ -13,12 +13,12 @@ export type ChartDimensions = {
 
 export type ChartDimensionsOption = Omit<
   ChartDimensions,
-  'width' | 'height' | 'boundedHeight' | 'boundedWidth'
+  'boundedHeight' | 'boundedWidth'
 >;
 
 const defaultDimensions: ChartDimensions = {
   width: window.innerWidth * 0.9,
-  height: 400,
+  height: 450,
   marginTop: 15,
   marginBottom: 40,
   marginLeft: 60,
