@@ -1,12 +1,9 @@
 import p5 from 'p5';
 import { AdvancedWalker, Walker } from '@/domains/walker';
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from './constants';
-import type {
-  RandomDistributionGraphKeys,
-  RandomDistributionRecords,
-} from '@/types';
 
-export const RandomWalker = function (p: p5) {
+// Basic 4 direction walker
+const RandomWalker = function (p: p5) {
   let walker: Walker;
   p.setup = function () {
     p.createCanvas(SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -20,7 +17,8 @@ export const RandomWalker = function (p: p5) {
   };
 };
 
-export const AdvancedRandomWalker = function (p: p5) {
+// 8 direction walker
+const AdvancedRandomWalker = function (p: p5) {
   let walker: AdvancedWalker;
   p.setup = function () {
     p.createCanvas(SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -34,7 +32,7 @@ export const AdvancedRandomWalker = function (p: p5) {
   };
 };
 
-export const NormalDistributionGraph = function (p: p5) {
+const NormalDistributionGraph = function (p: p5) {
   const randomCounts: number[] = [],
     totalBars = 20,
     widthOfBars = SCREEN_WIDTH / totalBars;
@@ -63,3 +61,5 @@ export const NormalDistributionGraph = function (p: p5) {
     }
   };
 };
+
+export default [NormalDistributionGraph, RandomWalker, AdvancedRandomWalker];
