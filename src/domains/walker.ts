@@ -49,3 +49,26 @@ export class AdvancedWalker extends Walker {
     this.y += yStep;
   }
 }
+
+export class DownRightWalker extends Walker {
+  constructor(sketch: p5) {
+    super(sketch);
+    this.name = 'DownRight';
+  }
+
+  public step(): void {
+    const choice = this.sketch.floor(this.sketch.random(10));
+
+    // 40% chance
+    if (choice > 5) {
+      this.x++;
+      //30% chance
+    } else if (choice < 6 && choice > 3) {
+      this.y++;
+    } else if (choice > 1 && choice < 4) {
+      this.x--;
+    } else {
+      this.y--;
+    }
+  }
+}
