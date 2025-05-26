@@ -1,5 +1,10 @@
 import p5 from 'p5';
-import { AdvancedWalker, DownRightWalker, Walker } from '@/domains/walker';
+import {
+  AdvancedWalker,
+  DownRightWalker,
+  DynamicWalker,
+  Walker,
+} from '@/domains/walker';
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from './constants';
 
 // Basic 4 direction walker
@@ -47,6 +52,21 @@ const DownRightRandomWalker = function (p: p5) {
   };
 };
 
+//Walker has a higher tendancy to go down and to the right
+const DynamicRandomWalker = function (p: p5) {
+  let walker: DynamicWalker;
+  p.setup = function () {
+    p.createCanvas(SCREEN_WIDTH, SCREEN_HEIGHT);
+    walker = new DynamicWalker(p);
+    p.background(255);
+  };
+
+  p.draw = function () {
+    walker.step();
+    walker.show();
+  };
+};
+
 const NormalDistributionGraph = function (p: p5) {
   const randomCounts: number[] = [],
     totalBars = 20,
@@ -78,6 +98,7 @@ const NormalDistributionGraph = function (p: p5) {
 };
 
 export default [
+  DynamicRandomWalker,
   DownRightRandomWalker,
   NormalDistributionGraph,
   RandomWalker,

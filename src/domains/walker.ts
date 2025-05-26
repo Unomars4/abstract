@@ -72,3 +72,20 @@ export class DownRightWalker extends Walker {
     }
   }
 }
+
+export class DynamicWalker extends Walker {
+  constructor(sketch: p5) {
+    super(sketch);
+    this.name = 'Dynamic';
+  }
+
+  public step(): void {
+    const mouseX = this.sketch.mouseX,
+      mouseY = this.sketch.mouseY,
+      rand = this.sketch.random(1);
+
+    const distanceBewteen = this.sketch.dist(mouseX, mouseY, this.x, this.y);
+    this.x += distanceBewteen;
+    this.y += distanceBewteen;
+  }
+}
