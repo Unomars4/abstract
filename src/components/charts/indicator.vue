@@ -10,8 +10,14 @@ const { dimensions, placementAmt, title } = defineProps<{
 </script>
 
 <template>
-  <rect :class="clsName" :title="title" x="0" :y="placementAmt" :width="dimensions.boundedWidth"
-    :height="dimensions.boundedHeight - placementAmt" />
+  <rect
+    :class="clsName"
+    :title="title"
+    x="0"
+    :y="placementAmt"
+    :width="dimensions.boundedWidth"
+    :height="dimensions.boundedHeight - placementAmt"
+  />
 </template>
 
 <style lang="css"></style>

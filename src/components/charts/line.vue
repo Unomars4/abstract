@@ -4,7 +4,7 @@ import * as d3 from 'd3';
 
 type LineProps = {
   type?: 'line' | 'area';
-  data: PossibleChartType[]
+  data: PossibleChartType[];
   interpolation?: d3.CurveFactory | d3.CurveFactoryLineOnly;
   xAccessor: (dataObj: PossibleChartType) => any;
   yAccessor: (dataObj: PossibleChartType) => any;
@@ -16,24 +16,22 @@ const {
   interpolation = d3.curveNatural,
   data,
   xAccessor,
-  yAccessor
+  yAccessor,
 } = defineProps<LineProps>();
 
+const lineGenerator = d3[type]().x(xAccessor).y(yAccessor).curve(interpolation);
 
-const lineGenerator = d3[type]()
-  .x(xAccessor)
-  .y(yAccessor)
-  .curve(interpolation);
-
-if (type === "area") {
-  lineGenerator
-    .y0Accessor(y0Accessor)
-    .y1(yAccessor);
+if (type === 'area') {
+  lineGenerator.y0Accessor(y0Accessor).y1(yAccessor);
 }
 </script>
 
 <template>
-  <path v-bind="$attrs" :class="`line line-type--${type}`" :d="lineGenerator(data)" />
+  <path
+    v-bind="$attrs"
+    :class="`line line-type--${type}`"
+    :d="lineGenerator(data)"
+  />
 </template>
 
 <style lang="css"></style>

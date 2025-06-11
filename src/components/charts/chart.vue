@@ -4,11 +4,15 @@ const { height, width } = defineProps<{
   height: number;
   marginLeft: number;
   marginTop: number;
-}>()
+}>();
 </script>
 
 <template>
-  <svg :width="width" :height="height" class="chart">
+  <svg
+    :width="width"
+    :height="height"
+    class="chart"
+  >
     <g :transform="`translate(${marginLeft}, ${marginTop})`">
       <slot />
     </g>
