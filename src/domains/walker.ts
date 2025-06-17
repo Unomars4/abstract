@@ -79,13 +79,22 @@ export class DynamicWalker extends Walker {
     this.name = 'Dynamic';
   }
 
-  public step(): void {
-    const mouseX = this.sketch.mouseX,
-      mouseY = this.sketch.mouseY,
-      rand = this.sketch.random(1);
+  override step({ mouseX, mouseY }: { mouseX: number; mouseY: number }): void {
+    const rand = this.sketch.random(1),
+      xDiff = mouseX - this.x,
+      yDiff = mouseY - this.y;
 
-    const distanceBewteen = this.sketch.dist(mouseX, mouseY, this.x, this.y);
-    this.x += distanceBewteen;
-    this.y += distanceBewteen;
+    if (rand < 0.5) {
+      this.x += xDiff > 0 ? 1 : -1;
+      this.y += yDiff > 0 ? 1 : -1;
+    } else if (rand < 0.6) {
+      this.x++;
+    } else if (rand < 0.7) {
+      this.x--;
+    } else if (rand < 0.8) {
+      this.y--;
+    } else {
+      this.y++;
+    }
   }
 }

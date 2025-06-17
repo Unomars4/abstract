@@ -55,15 +55,17 @@ const DownRightRandomWalker = function (p: p5) {
 //Walker has a higher tendancy to go down and to the right
 const DynamicRandomWalker = function (p: p5) {
   let walker: DynamicWalker;
-  const mouseX = p.mouseX, mouseY = p.mouseY;
+  const mouseX = p.mouseX,
+    mouseY = p.mouseY;
+
   p.setup = function () {
-    p.createCanvas(SCREEN_WIDTH, SCREEN_HEIGT);
+    p.createCanvas(SCREEN_WIDTH, SCREEN_HEIGHT);
     walker = new DynamicWalker(p);
     p.background(255);
   };
 
   p.draw = function () {
-    walker.step();
+    walker.step({ mouseX: p.mouseX, mouseY: p.mouseY });
     walker.show();
   };
 };
