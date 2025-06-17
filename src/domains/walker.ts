@@ -113,3 +113,18 @@ export class DynamicWalker extends Walker {
     }
   }
 }
+
+export class GaussianWalker extends Walker {
+  constructor(sketch: p5) {
+    super(sketch);
+    this.name = 'Gaussian';
+  }
+
+  override step({ width, height }: { width: number; height: number }): void {
+    const xStep = this.sketch.floor(this.sketch.randomGaussian(1, 10)),
+      yStep = this.sketch.floor(this.sketch.randomGaussian(1, 10));
+
+    this.x += xStep;
+    this.y += yStep;
+  }
+}
