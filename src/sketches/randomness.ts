@@ -160,6 +160,14 @@ const GaussianColorSplatter = function (p: p5) {
   };
 };
 
+/**
+ * Sketch displaying the Gaussian walker
+ * Gaussian distribution used to determine the walkers step size
+ */
+const GaussianWalker = function (p: p5) {
+  const walker;
+};
+
 export default [
   GaussianColorSplatter,
   GaussianGraph,
