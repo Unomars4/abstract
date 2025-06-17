@@ -100,7 +100,23 @@ const NormalDistributionGraph = function (p: p5) {
   };
 };
 
+const GaussianGraph = function (p: p5) {
+  p.setup = function () {
+    p.background(255);
+    p.createCanvas(SCREEN_WIDTH, SCREEN_HEIGHT);
+  };
+
+  p.draw = function () {
+    const x = 60 * p.randomGaussian() + SCREEN_WIDTH / 2;
+
+    p.noStroke();
+    p.fill(0, 10);
+    p.circle(x, SCREEN_HEIGHT / 2, 16);
+  };
+};
+
 export default [
+  GaussianGraph,
   DynamicRandomWalker,
   DownRightRandomWalker,
   NormalDistributionGraph,
