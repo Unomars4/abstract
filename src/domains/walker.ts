@@ -79,12 +79,27 @@ export class DynamicWalker extends Walker {
     this.name = 'Dynamic';
   }
 
-  override step({ mouseX, mouseY }: { mouseX: number; mouseY: number }): void {
+  override step({
+    mouseX,
+    mouseY,
+    screenWidth,
+    screenHeight,
+  }: {
+    mouseX: number;
+    mouseY: number;
+    screenWidth: number;
+    screenHeight: number;
+  }): void {
     const rand = this.sketch.random(1),
       xDiff = mouseX - this.x,
-      yDiff = mouseY - this.y;
+      yDiff = mouseY - this.y,
+      mouseIsReachable =
+        mouseX >= 0 &&
+        mouseX <= screenWidth &&
+        mouseY >= 0 &&
+        mouseY <= screenHeight;
 
-    if (rand < 0.5) {
+    if (mouseIsReachable && rand < 0.5) {
       this.x += xDiff > 0 ? 1 : -1;
       this.y += yDiff > 0 ? 1 : -1;
     } else if (rand < 0.6) {

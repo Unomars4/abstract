@@ -74,7 +74,12 @@ const DynamicRandomWalker = function (p: p5) {
     const mouseX = p.mouseX,
       mouseY = p.mouseY;
 
-    walker.step({ mouseX, mouseY });
+    walker.step({
+      mouseX,
+      mouseY,
+      screenWidth: SCREEN_WIDTH,
+      screenHeight: SCREEN_HEIGHT,
+    });
 
     walker.show();
   };
