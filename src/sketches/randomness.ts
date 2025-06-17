@@ -7,7 +7,9 @@ import {
 } from '@/domains/walker';
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from './constants';
 
-// Basic 4 direction walker
+/**
+ * Sketch displaying a Basic 4 direction walker
+ */
 const RandomWalker = function (p: p5) {
   let walker: Walker;
   p.setup = function () {
@@ -22,7 +24,9 @@ const RandomWalker = function (p: p5) {
   };
 };
 
-// 8 direction walker
+/*
+ * Sketch displaying a 8 directional walker
+ */
 const AdvancedRandomWalker = function (p: p5) {
   let walker: AdvancedWalker;
   p.setup = function () {
@@ -37,7 +41,9 @@ const AdvancedRandomWalker = function (p: p5) {
   };
 };
 
-//Walker has a higher tendancy to go down and to the right
+/*
+ * Walker has a higher tendancy to go down and to the right
+ */
 const DownRightRandomWalker = function (p: p5) {
   let walker: DownRightWalker;
   p.setup = function () {
@@ -52,7 +58,9 @@ const DownRightRandomWalker = function (p: p5) {
   };
 };
 
-//Walker has a higher tendancy to go down and to the right
+/**
+ * Sketch with a walker that has a higher tendancy to go down and to the right
+ */
 const DynamicRandomWalker = function (p: p5) {
   let walker: DynamicWalker;
 
@@ -68,6 +76,9 @@ const DynamicRandomWalker = function (p: p5) {
   };
 };
 
+/**
+ * Sketch displaying how evenly distributed random are generated
+ */
 const NormalDistributionGraph = function (p: p5) {
   const randomCounts: number[] = [],
     totalBars = 20,
@@ -98,6 +109,9 @@ const NormalDistributionGraph = function (p: p5) {
   };
 };
 
+/**
+ * Sketch displaying Gaussian distributed randomness
+ */
 const GaussianGraph = function (p: p5) {
   p.setup = function () {
     p.background(255);
@@ -113,6 +127,9 @@ const GaussianGraph = function (p: p5) {
   };
 };
 
+/**
+ * Sketch displaying Gaussian distributed color splattering
+ */
 const GaussianColorSplatter = function (p: p5) {
   const std = 60;
 
