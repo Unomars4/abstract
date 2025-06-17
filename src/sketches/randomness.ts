@@ -114,14 +114,16 @@ const GaussianGraph = function (p: p5) {
 };
 
 const GaussianColorSplatter = function (p: p5) {
+  const std = 60;
+
   p.setup = function () {
     p.background(255);
     p.createCanvas(SCREEN_WIDTH, SCREEN_HEIGHT);
   };
 
   p.draw = function () {
-    const x = p.randomGaussian(SCREEN_WIDTH / 2, 120),
-      y = p.randomGaussian(SCREEN_HEIGHT / 2, 120),
+    const x = p.randomGaussian(SCREEN_WIDTH / 2, std),
+      y = p.randomGaussian(SCREEN_HEIGHT / 2, std),
       circleFill = p.color(`hsla(${Math.floor(x)}, 100%, 50%, 0.15)`);
 
     p.noStroke();
