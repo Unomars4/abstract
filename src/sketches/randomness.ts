@@ -59,7 +59,7 @@ const DownRightRandomWalker = function (p: p5) {
 };
 
 /**
- * Sketch with a walker that has a higher tendancy to go down and to the right
+ * Sketch with a walker that has a higher tendancy to follow the users mouse position
  */
 const DynamicRandomWalker = function (p: p5) {
   let walker: DynamicWalker;
@@ -71,13 +71,18 @@ const DynamicRandomWalker = function (p: p5) {
   };
 
   p.draw = function () {
-    walker.step({ mouseX: p.mouseX, mouseY: p.mouseY });
+    const mouseX = p.mouseX,
+      mouseY = p.mouseY;
+
+    walker.step({ mouseX, mouseY });
+
     walker.show();
   };
 };
 
 /**
  * Sketch displaying how evenly distributed random are generated
+ * for numbers between 1-20
  */
 const NormalDistributionGraph = function (p: p5) {
   const randomCounts: number[] = [],
@@ -110,7 +115,8 @@ const NormalDistributionGraph = function (p: p5) {
 };
 
 /**
- * Sketch displaying Gaussian distributed randomness
+ * Sketch displaying Gaussian distributed randomness using circle positions
+ * as indicators
  */
 const GaussianGraph = function (p: p5) {
   p.setup = function () {
