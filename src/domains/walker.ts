@@ -121,8 +121,8 @@ export class GaussianWalker extends Walker {
   }
 
   override step({ width, height }: { width: number; height: number }): void {
-    const xStep = this.sketch.floor(this.sketch.randomGaussian(1, 10)),
-      yStep = this.sketch.floor(this.sketch.randomGaussian(1, 10));
+    const xStep = Math.floor(this.sketch.randomGaussian(0, 3)),
+      yStep = Math.floor(this.sketch.randomGaussian(0, 3));
 
     this.x += xStep;
     this.y += yStep;

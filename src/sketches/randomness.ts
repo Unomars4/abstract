@@ -3,6 +3,7 @@ import {
   AdvancedWalker,
   DownRightWalker,
   DynamicWalker,
+  GaussianWalker,
   Walker,
 } from '@/domains/walker';
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from './constants';
@@ -164,11 +165,23 @@ const GaussianColorSplatter = function (p: p5) {
  * Sketch displaying the Gaussian walker
  * Gaussian distribution used to determine the walkers step size
  */
-const GaussianWalker = function (p: p5) {
-  const walker;
+const GaussianWalkerSketch = function (p: p5) {
+  let walker: GaussianWalker;
+
+  p.setup = function () {
+    p.background(255);
+    walker = new GaussianWalker(p);
+    p.createCanvas(SCREEN_WIDTH, SCREEN_HEIGHT);
+  };
+
+  p.draw = function () {
+    walker.step({ width: SCREEN_WIDTH, height: SCREEN_HEIGHT });
+    walker.show();
+  };
 };
 
 export default [
+  GaussianWalkerSketch,
   GaussianColorSplatter,
   GaussianGraph,
   DynamicRandomWalker,
