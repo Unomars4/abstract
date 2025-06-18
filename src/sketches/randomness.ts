@@ -175,7 +175,7 @@ const GaussianWalkerSketch = function (p: p5) {
   };
 
   p.draw = function () {
-    walker.step({ width: SCREEN_WIDTH, height: SCREEN_HEIGHT });
+    walker.step();
     walker.show();
   };
 };
