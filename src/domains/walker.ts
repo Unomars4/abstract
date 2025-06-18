@@ -33,6 +33,18 @@ export class Walker {
       this.y--;
     }
   }
+
+  protected edgeOfCanvasReset() {
+    if (this.x > this.sketch.width) {
+      this.x = 0;
+    } else if (this.x < 0) {
+      this.x = this.sketch.width;
+    } else if (this.y > this.sketch.height) {
+      this.y = 0;
+    } else if (this.y < 0) {
+      this.y = this.sketch.height;
+    }
+  }
 }
 
 export class AdvancedWalker extends Walker {
@@ -47,6 +59,8 @@ export class AdvancedWalker extends Walker {
 
     this.x += xStep;
     this.y += yStep;
+
+    this.edgeOfCanvasReset();
   }
 }
 
@@ -70,6 +84,8 @@ export class DownRightWalker extends Walker {
     } else {
       this.y--;
     }
+
+    this.edgeOfCanvasReset();
   }
 }
 
@@ -111,6 +127,8 @@ export class DynamicWalker extends Walker {
     } else {
       this.y++;
     }
+
+    this.edgeOfCanvasReset();
   }
 }
 
@@ -126,5 +144,7 @@ export class GaussianWalker extends Walker {
 
     this.x += xStep;
     this.y += yStep;
+
+    this.edgeOfCanvasReset();
   }
 }
