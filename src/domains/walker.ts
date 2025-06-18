@@ -1,7 +1,7 @@
 //Walker Class
 import p5 from 'p5';
 
-export class Walker {
+export abstract class Walker {
   x: number;
   y: number;
   protected readonly sketch: p5;
@@ -20,6 +20,30 @@ export class Walker {
     this.sketch.point(this.x, this.y);
   }
 
+  protected edgeOfCanvasReset(): void {
+    if (this.x > this.sketch.width) {
+      this.x = 0;
+    } else if (this.x < 0) {
+      this.x = this.sketch.width;
+    } else if (this.y > this.sketch.height) {
+      this.y = 0;
+    } else if (this.y < 0) {
+      this.y = this.sketch.height;
+    }
+  }
+
+  public step({
+    mouseX,
+    mouseY,
+    screenWidth,
+    screenHeight,
+  }: {
+    mouseX: number;
+    mouseY: number;
+    screenWidth: number;
+    screenHeight: number;
+  }): void;
+
   public step() {
     const choice = this.sketch.floor(this.sketch.random(4));
 
@@ -33,18 +57,6 @@ export class Walker {
       this.y--;
     }
   }
-
-  protected edgeOfCanvasReset() {
-    if (this.x > this.sketch.width) {
-      this.x = 0;
-    } else if (this.x < 0) {
-      this.x = this.sketch.width;
-    } else if (this.y > this.sketch.height) {
-      this.y = 0;
-    } else if (this.y < 0) {
-      this.y = this.sketch.height;
-    }
-  }
 }
 
 export class AdvancedWalker extends Walker {
@@ -53,7 +65,7 @@ export class AdvancedWalker extends Walker {
     this.name = 'Advanced';
   }
 
-  public step(): void {
+  public override step(): void {
     const xStep = this.sketch.random(-1, 1);
     const yStep = this.sketch.random(-1, 1);
 
@@ -70,7 +82,7 @@ export class DownRightWalker extends Walker {
     this.name = 'DownRight';
   }
 
-  public step(): void {
+  public override step(): void {
     const choice = this.sketch.floor(this.sketch.random(10));
 
     // 40% chance
@@ -95,7 +107,7 @@ export class DynamicWalker extends Walker {
     this.name = 'Dynamic';
   }
 
-  override step({
+  public step({
     mouseX,
     mouseY,
     screenWidth,
@@ -138,7 +150,7 @@ export class GaussianWalker extends Walker {
     this.name = 'Gaussian';
   }
 
-  override step({ width, height }: { width: number; height: number }): void {
+  public override step(): void {
     const xStep = Math.floor(this.sketch.randomGaussian(0, 3)),
       yStep = Math.floor(this.sketch.randomGaussian(0, 3));
 
