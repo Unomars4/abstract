@@ -16,7 +16,7 @@ export class Walker {
 
   public show() {
     this.sketch.strokeWeight(5);
-    this.sketch.stroke(0);
+    this.sketch.stroke('rgba(120, 120, 120, 0.2)');
     this.sketch.point(this.x, this.y);
   }
 
