@@ -127,13 +127,13 @@ export class DynamicWalker extends Walker {
     if (mouseIsReachable && rand < 0.5) {
       this.x += xDiff > 0 ? 1 : -1;
       this.y += yDiff > 0 ? 1 : -1;
-    } else if (rand < 0.6) {
+    } else if (rand > 0.5 && rand < 0.6) {
       this.x++;
-    } else if (rand < 0.7) {
+    } else if (rand > 0.6 && rand < 0.7) {
       this.x--;
-    } else if (rand < 0.8) {
+    } else if (rand > 0.7 && rand < 0.8) {
       this.y--;
-    } else {
+    } else if (rand > 0.8 && rand < 0.9) {
       this.y++;
     }
 
