@@ -5,6 +5,7 @@ import {
   DynamicWalker,
   GaussianWalker,
   LevyFlightWalker,
+  PerlinStepWalker,
   Walker,
 } from '@/domains/walker';
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from './constants';
@@ -200,7 +201,27 @@ const CustomDistributionWalker = function (p: p5) {
   };
 };
 
+/**
+ * Sketch displaying Perlin noise randomness, Walker's step size is mapped to
+ * the result of the noise function.
+ */
+const PerlinStepSizeWalker = function (p: p5) {
+  let walker: PerlinStepWalker;
+
+  p.setup = function () {
+    p.background(255);
+    walker = new PerlinStepWalker(p);
+    p.createCanvas(SCREEN_WIDTH, SCREEN_HEIGHT);
+  };
+
+  p.draw = function () {
+    walker.step();
+    walker.show();
+  };
+};
+
 export default [
+  PerlinStepSizeWalker,
   CustomDistributionWalker,
   GaussianWalkerSketch,
   GaussianColorSplatter,

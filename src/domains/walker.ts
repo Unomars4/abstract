@@ -193,3 +193,38 @@ export class LevyFlightWalker extends Walker {
     }
   }
 }
+
+export class PerlinStepWalker extends Walker {
+  private tx: number;
+  private ty: number;
+  private radius: number;
+
+  constructor(sketch: p5) {
+    super(sketch, 'Perlin Step-size');
+    this.tx = 0;
+    this.ty = 5000;
+    this.radius = 25;
+  }
+
+  override show(): void {
+    const walkerColor = this.sketch.color(
+      `hsla(${Math.floor(this.x)}, 100%, 50%, 0.2)`,
+    );
+    this.sketch.fill(walkerColor);
+    this.sketch.noStroke();
+    this.sketch.circle(this.x, this.y, this.radius);
+  }
+
+  override step(): void {
+    const xStep = this.sketch.map(this.sketch.noise(this.tx), 0, 1, -1, 1),
+      yStep = this.sketch.map(this.sketch.noise(this.ty), 0, 1, -1, 1);
+
+    this.x += xStep;
+    this.y += yStep;
+
+    this.tx += 0.01;
+    this.ty += 0.01;
+
+    this.edgeOfCanvasReset();
+  }
+}
