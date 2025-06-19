@@ -7,11 +7,11 @@ export abstract class Walker {
   protected readonly sketch: p5;
   name: string;
 
-  constructor(sketch: p5) {
+  constructor(sketch: p5, name: string = 'Basic') {
     this.x = sketch.width / 2;
     this.y = sketch.height / 2;
     this.sketch = sketch;
-    this.name = 'Basic';
+    this.name = name;
   }
 
   public show() {
@@ -61,8 +61,7 @@ export abstract class Walker {
 
 export class AdvancedWalker extends Walker {
   constructor(sketch: p5) {
-    super(sketch);
-    this.name = 'Advanced';
+    super(sketch, 'Advanced');
   }
 
   public override step(): void {
@@ -78,8 +77,7 @@ export class AdvancedWalker extends Walker {
 
 export class DownRightWalker extends Walker {
   constructor(sketch: p5) {
-    super(sketch);
-    this.name = 'DownRight';
+    super(sketch, 'DownRight');
   }
 
   public override step(): void {
@@ -103,8 +101,7 @@ export class DownRightWalker extends Walker {
 
 export class DynamicWalker extends Walker {
   constructor(sketch: p5) {
-    super(sketch);
-    this.name = 'Dynamic';
+    super(sketch, 'Dynamic');
   }
 
   public step({
@@ -146,8 +143,7 @@ export class DynamicWalker extends Walker {
 
 export class GaussianWalker extends Walker {
   constructor(sketch: p5) {
-    super(sketch);
-    this.name = 'Gaussian';
+    super(sketch, 'Gaussian');
   }
 
   public override step(): void {
