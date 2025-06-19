@@ -207,7 +207,6 @@ export default [
   GaussianGraph,
   DynamicRandomWalker,
   DownRightRandomWalker,
-  NormalDistributionGraph,
   RandomWalker,
   AdvancedRandomWalker,
 ];
