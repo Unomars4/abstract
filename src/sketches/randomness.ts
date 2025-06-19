@@ -4,6 +4,7 @@ import {
   DownRightWalker,
   DynamicWalker,
   GaussianWalker,
+  LevyFlightWalker,
   Walker,
 } from '@/domains/walker';
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from './constants';
@@ -180,7 +181,27 @@ const GaussianWalkerSketch = function (p: p5) {
   };
 };
 
+/**
+ * Sketch displaying custom distribution randomness or levy flight, Walker takes larger random steps
+ * every some often to reduce oversampling.
+ */
+const CustomDistributionWalker = function (p: p5) {
+  let walker: LevyFlightWalker;
+
+  p.setup = function () {
+    p.background(255);
+    walker = new LevyFlightWalker(p);
+    p.createCanvas(SCREEN_WIDTH, SCREEN_HEIGHT);
+  };
+
+  p.draw = function () {
+    walker.step();
+    walker.show();
+  };
+};
+
 export default [
+  CustomDistributionWalker,
   GaussianWalkerSketch,
   GaussianColorSplatter,
   GaussianGraph,

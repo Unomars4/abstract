@@ -1,7 +1,7 @@
 //Walker Class
 import p5 from 'p5';
 
-export abstract class Walker {
+export class Walker {
   x: number;
   y: number;
   protected readonly sketch: p5;
@@ -154,5 +154,42 @@ export class GaussianWalker extends Walker {
     this.y += yStep;
 
     this.edgeOfCanvasReset();
+  }
+}
+
+export class LevyFlightWalker extends Walker {
+  constructor(sketch: p5) {
+    super(sketch, 'Levy Flight');
+  }
+
+  public override step(): void {
+    const step = 5;
+    let xStep = this.acceptReject() * step,
+      yStep = this.acceptReject() * step;
+
+    if (this.sketch.random([false, true])) {
+      xStep *= -1;
+    }
+
+    if (this.sketch.random([false, true])) {
+      yStep *= -1;
+    }
+
+    this.x += xStep;
+    this.y += yStep;
+
+    this.edgeOfCanvasReset();
+  }
+
+  private acceptReject(): number {
+    while (true) {
+      const r1 = this.sketch.random(1),
+        probability = r1 * r1,
+        r2 = this.sketch.random(1);
+
+      if (r2 > probability) {
+        return r1;
+      }
+    }
   }
 }
