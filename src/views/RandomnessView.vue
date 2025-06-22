@@ -8,6 +8,7 @@ import randomness from '@/sketches/randomness';
   <div
     v-for="(sketch, idx) in randomness"
     :key="`container-${idx}`"
+    class="sketch-container"
   >
     <Sketch
       :container-id="`container-${idx}`"
@@ -16,4 +17,8 @@ import randomness from '@/sketches/randomness';
   </div>
 </template>
 
-<style scoped lang="css"></style>
+<style scoped lang="css">
+.sketch-container {
+  margin-top: 15px;
+}
+</style>
