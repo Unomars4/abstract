@@ -9,24 +9,27 @@ import {
   Walker,
 } from '@/domains/walker';
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from './constants';
-import type { Sketch } from '@/types';
+import { createSketch } from '@/utils';
 
 /**
  * Sketch displaying a Basic 4 direction walker
  */
-const RandomWalker = function (p: p5) {
-  let walker: Walker;
-  p.setup = function () {
-    p.createCanvas(SCREEN_WIDTH, SCREEN_HEIGHT);
-    walker = new Walker(p);
-    p.background(255);
-  };
+const RandomWalker = createSketch({
+  title: 'Basic 4 direction walker',
+  sketch: function (p: p5) {
+    let walker: Walker;
+    p.setup = function () {
+      p.createCanvas(SCREEN_WIDTH, SCREEN_HEIGHT);
+      walker = new Walker(p);
+      p.background(255);
+    };
 
-  p.draw = function () {
-    walker.step();
-    walker.show();
-  };
-};
+    p.draw = function () {
+      walker.step();
+      walker.show();
+    };
+  },
+});
 
 /*
  * Sketch displaying a 8 directional walker

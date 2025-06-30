@@ -6,9 +6,8 @@ export type SketchDetails = {
   isPlaying: boolean;
   title: string;
   id: number;
+  sketch: (p: p5) => void;
 };
-
-export type Sketch = (p: p5) => void & SketchDetails;
 
 export type ClimateDay = {
   time: number;
