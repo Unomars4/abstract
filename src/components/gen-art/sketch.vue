@@ -18,7 +18,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <p>title: {{ sketch.title }}</p>
+  <p>{{ sketch.title }}</p>
   <div
     id="container"
     :ref="containerId"
