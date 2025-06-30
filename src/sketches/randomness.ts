@@ -220,7 +220,21 @@ const PerlinStepSizeWalker = function (p: p5) {
   };
 };
 
+/*
+ * Sketch displaying 2D noise with the noiseDetail function to determine the colors
+ * on the sketch
+ */
+const TwoDimNoise = function (p: p5) {
+  p.setup = function () {
+    p.background(255);
+    p.createCanvas(SCREEN_WIDTH, SCREEN_HEIGHT);
+  };
+
+  p.draw = function () {};
+};
+
 export default [
+  TwoDimNoise,
   PerlinStepSizeWalker,
   CustomDistributionWalker,
   GaussianWalkerSketch,
