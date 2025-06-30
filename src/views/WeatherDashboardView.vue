@@ -2,7 +2,7 @@
 import Timeline from '@/components/charts/timeline.vue';
 import useGetChartData from '@/composables/useGetChartData';
 import type { ClimateDay } from '@/types';
-import { dateParse } from '@/utils/visualisations';
+import { dateParse } from '@/utils';
 import { provide } from 'vue';
 
 const DATA_URL = '../../data/nyc_weather_data.json';
