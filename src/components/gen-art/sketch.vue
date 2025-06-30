@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { onMounted, useTemplateRef } from 'vue';
 import p5 from 'p5';
-import { type Sketch } from '@/types';
+import { type SketchDetails } from '@/types';
 
 export type SketchProp = {
   containerId: string;
-  sketch: Sketch;
+  sketch: SketchDetails;
 };
 
 const { containerId, sketch } = defineProps<SketchProp>();
@@ -13,12 +13,12 @@ const container = useTemplateRef<HTMLDivElement | undefined>(containerId);
 
 onMounted(() => {
   if (!container.value) return;
-  new p5(sketch, container.value);
+  new p5(sketch.sketch, container.value);
 });
 </script>
 
 <template>
-  <p>title: {{ .title }}</p>
+  <p>title: {{ sketch.title }}</p>
   <div
     id="container"
     :ref="containerId"
