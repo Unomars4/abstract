@@ -1,4 +1,14 @@
+import type p5 from 'p5';
+
 export type PossibleChartType = ClimateDay;
+
+export type SketchDetails = {
+  isPlaying: boolean;
+  title: string;
+  id: number;
+};
+
+export type Sketch = (p: p5) => void & SketchDetails;
 
 export type ClimateDay = {
   time: number;

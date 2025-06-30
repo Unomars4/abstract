@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { onMounted, useTemplateRef } from 'vue';
 import p5 from 'p5';
+import { type Sketch } from '@/types';
 
 export type SketchProp = {
   containerId: string;
-  sketch: (p: p5) => void;
+  sketch: Sketch;
 };
 
 const { containerId, sketch } = defineProps<SketchProp>();
@@ -17,7 +18,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <div id="container" :ref="containerId"></div>
+  <p>title: {{ sketch().title }}</p>
+  <div
+    id="container"
+    :ref="containerId"
+  ></div>
 </template>
 
 <style scoped lang="css">

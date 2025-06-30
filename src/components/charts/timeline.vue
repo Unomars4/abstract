@@ -7,7 +7,7 @@ import Axis from './axes/axis.vue';
 import Indicator from './indicator.vue';
 import type { ClimateDay } from '@/types';
 import { inject } from 'vue';
-import { dateFormatter } from '@/utils/visualisations';
+import { dateFormatter } from '@/utils';
 
 const { data } = defineProps<{ data: ClimateDay[] }>();
 

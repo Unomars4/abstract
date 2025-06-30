@@ -9,6 +9,7 @@ import {
   Walker,
 } from '@/domains/walker';
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from './constants';
+import type { Sketch } from '@/types';
 
 /**
  * Sketch displaying a Basic 4 direction walker
@@ -230,11 +231,29 @@ const TwoDimNoise = function (p: p5) {
     p.createCanvas(SCREEN_WIDTH, SCREEN_HEIGHT);
   };
 
-  p.draw = function () {};
+  p.draw = function () {
+    const noiseLevel = 255,
+      noiseFactor = 0.02;
+
+    for (let i = 0; i < SCREEN_HEIGHT; i++) {
+      for (let j = 0; j < SCREEN_WIDTH; j++) {
+        const nx = noiseFactor * j,
+          ny = noiseFactor * i;
+
+        p.noiseDetail(2, 0.25);
+
+        const c = noiseLevel * p.noise(nx, ny);
+
+        p.stroke(c);
+        p.point(j, i);
+      }
+    }
+  };
+
+  return { isPlaying: true };
 };
 
 export default [
-  TwoDimNoise,
   PerlinStepSizeWalker,
   CustomDistributionWalker,
   GaussianWalkerSketch,
