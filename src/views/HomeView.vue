@@ -2,7 +2,7 @@
 
 <template>
   <div class="logo-container">
-    <h1>Abstract</h1>
+    <h1>ABSTRACT</h1>
     <h6>Do Dope Stuff</h6>
   </div>
 </template>
