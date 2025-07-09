@@ -41,6 +41,7 @@
 :root {
   --background: #ffffff;
   --foreground: #000000;
+  --foreground-secondary: var(--gray-500);
 
   --red-100: #fb4934;
   --red-200: #cc241d;
@@ -122,12 +123,13 @@ h3,
 h4,
 h5,
 h6 {
+  color: var(--foreground);
   font-family: 'Ubuntu';
 }
 
 body {
   min-height: 100vh;
-  color: var(--foreground);
+  color: var(--foreground-secondary);
   background: var(--background);
   transition:
     color 0.5s,
