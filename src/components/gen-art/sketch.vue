@@ -27,7 +27,7 @@ onMounted(() => {
 
 <style scoped lang="css">
 #container {
-  border: solid 1.2px var(--border);
+  border: solid 1.5px var(--border);
   border-radius: var(--radius-xl);
   height: fit-content;
   width: fit-content;
