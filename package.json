@@ -14,7 +14,6 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@fontsource/ubuntu": "^5.2.6",
     "d3": "^7.9.0",
     "p5": "^1.11.3",
     "pinia": "^3.0.2",
