@@ -14,7 +14,6 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@fontsource-variable/newsreader": "^5.2.7",
     "d3": "^7.9.0",
     "p5": "^1.11.3",
     "pinia": "^3.0.2",
