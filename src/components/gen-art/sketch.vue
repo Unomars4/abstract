@@ -27,14 +27,15 @@ onMounted(() => {
 
 <style scoped lang="css">
 #container {
-  border: solid 1px hsl(var(--border));
+  border: solid 1.2px var(--border);
   border-radius: var(--radius-xl);
   height: fit-content;
   width: fit-content;
   overflow: hidden;
   margin: 5px;
-  box-shadow:
-    0 1px 3px 0 rgba(0, 0, 0, 0.1),
-    0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+#container:hover {
+  box-shadow: -3px 6px 42px -21px rgba(0, 0, 0, 0.38);
 }
 </style>
