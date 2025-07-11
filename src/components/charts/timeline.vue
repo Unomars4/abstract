@@ -88,13 +88,13 @@ const freezingAmount = yScale(32);
 }
 
 .freezing {
-  fill: var(--blue-1);
+  fill: var(--blue-100);
   fill-opacity: 0.2;
 }
 
 .line-type--line {
   fill: none;
-  stroke: var(--yellow-1);
+  stroke: var(--yellow-100);
   stroke-width: 2px;
 }
 </style>
