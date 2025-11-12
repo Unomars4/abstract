@@ -81,22 +81,13 @@ const DynamicRandomWalker = createSketch({
 
     p.setup = function () {
       p.createCanvas(SCREEN_WIDTH, SCREEN_HEIGHT);
-      walker = new DynamicWalker(p);
+      walker = new DynamicWalker(p, SCREEN_WIDTH, SCREEN_HEIGHT);
       p.background(255);
     };
 
     p.draw = function () {
-      const mouseX = p.mouseX,
-        mouseY = p.mouseY;
-
-      walker.step({
-        mouseX,
-        mouseY,
-        screenWidth: SCREEN_WIDTH,
-        screenHeight: SCREEN_HEIGHT,
-      });
-
-      walker.show();
+      walker.step({ mouseX: p.mouseX, mouseY: p.mouseY });
+      walker.show({ mouseX: p.mouseX, mouseY: p.mouseY });
     };
   },
 });

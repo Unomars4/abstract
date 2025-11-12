@@ -6,17 +6,21 @@ export class Walker {
   y: number;
   protected readonly sketch: p5;
   name: string;
+  defaultColor: string;
 
   constructor(sketch: p5, name: string = 'Basic') {
     this.x = sketch.width / 2;
     this.y = sketch.height / 2;
     this.sketch = sketch;
     this.name = name;
+    this.defaultColor = 'rgba(120, 120, 120, 0.2)';
   }
+
+  public show({ mouseX, mouseY }: { mouseX: number; mouseY: number }): void;
 
   public show() {
     this.sketch.strokeWeight(5);
-    this.sketch.stroke('rgba(120, 120, 120, 0.2)');
+    this.sketch.stroke(this.defaultColor);
     this.sketch.point(this.x, this.y);
   }
 
@@ -32,17 +36,7 @@ export class Walker {
     }
   }
 
-  public step({
-    mouseX,
-    mouseY,
-    screenWidth,
-    screenHeight,
-  }: {
-    mouseX: number;
-    mouseY: number;
-    screenWidth: number;
-    screenHeight: number;
-  }): void;
+  public step({ mouseX, mouseY }: { mouseX: number; mouseY: number }): void;
 
   public step() {
     const choice = this.sketch.floor(this.sketch.random(4));
@@ -100,31 +94,57 @@ export class DownRightWalker extends Walker {
 }
 
 export class DynamicWalker extends Walker {
-  constructor(sketch: p5) {
+  screenWidth: number;
+  screenHeight: number;
+
+  constructor(sketch: p5, screenWidth: number, screenHeight: number) {
     super(sketch, 'Dynamic');
+    this.screenWidth = screenWidth;
+    this.screenHeight = screenHeight;
   }
 
-  public step({
+  private mouseIsReachable(mouseX: number, mouseY: number): boolean {
+    return (
+      mouseX >= 0 &&
+      mouseX <= this.screenWidth &&
+      mouseY >= 0 &&
+      mouseY <= this.screenHeight
+    );
+  }
+
+  public override show({
     mouseX,
     mouseY,
-    screenWidth,
-    screenHeight,
   }: {
     mouseX: number;
     mouseY: number;
-    screenWidth: number;
-    screenHeight: number;
+  }): void {
+    const walkerColor = this.sketch.color(
+      `hsla(${Math.floor(this.x)}, 100%, 50%, 0.2)`,
+    );
+    this.sketch.strokeWeight(5);
+
+    if (this.mouseIsReachable(mouseX, mouseY)) {
+      this.sketch.stroke(walkerColor);
+    } else {
+      this.sketch.stroke(this.defaultColor);
+    }
+
+    this.sketch.point(this.x, this.y);
+  }
+
+  public override step({
+    mouseX,
+    mouseY,
+  }: {
+    mouseX: number;
+    mouseY: number;
   }): void {
     const rand = this.sketch.random(1),
       xDiff = mouseX - this.x,
-      yDiff = mouseY - this.y,
-      mouseIsReachable =
-        mouseX >= 0 &&
-        mouseX <= screenWidth &&
-        mouseY >= 0 &&
-        mouseY <= screenHeight;
+      yDiff = mouseY - this.y;
 
-    if (mouseIsReachable && rand < 0.5) {
+    if (this.mouseIsReachable(mouseX, mouseY) && rand < 0.5) {
       this.x += xDiff > 0 ? 1 : -1;
       this.y += yDiff > 0 ? 1 : -1;
     } else if (rand > 0.5 && rand < 0.6) {
