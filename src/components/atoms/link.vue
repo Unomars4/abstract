@@ -2,9 +2,10 @@
 type LinkProps = {
   href: string;
   blankTarget: boolean;
+  text: string;
 };
 
-const { href, blankTarget } = defineProps<LinkProps>();
+const { href, blankTarget, text } = defineProps<LinkProps>();
 </script>
 
 <template>
@@ -12,7 +13,7 @@ const { href, blankTarget } = defineProps<LinkProps>();
     :href="href"
     :target="blankTarget ? '_blank' : ''"
   >
-    <slot></slot>
+    {{ text }}
   </a>
 </template>
 
