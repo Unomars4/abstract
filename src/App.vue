@@ -10,7 +10,10 @@ import { RouterView } from 'vue-router';
 
 <style scoped>
 main {
-  height: 100%;
+  height: fit-content;
   margin: 0 auto;
+  width: fit-content;
+  border: 1px solid var(--border);
+  padding: 1rem;
 }
 </style>
